@@ -52,6 +52,21 @@ speed, put `force_turbo=1` in the `/boot/config.txt`.
     over_voltage=0
     force_turbo=1
 
+## Determine Kernel version
+
+You can determine the current linux kernel version by:
+
+    [kevin@raspberrypi tmp]$ more /proc/version
+    Linux version 3.2.27+ (dc4@dc4-arm-01) (gcc version 4.7.2 20120731 (prerelease) 
+    (crosstool-NG linaro-1.13.1+bzr2458 - Linaro GCC 2012.08) ) #250 PREEMPT Thu Oct
+     18 19:03:02 BST 2012
+
+or     
+
+    [kevin@raspberrypi tmp]$ uname -a
+    Linux raspberrypi 3.2.27+ #250 PREEMPT Thu Oct 18 19:03:02 BST 2012 armv6l GNU/Linux
+
+
 ## Resize SD Memory Card
 
 A good answer is found [here](http://raspberrypi.stackexchange.com/questions/499/how-can-i-resize-my-root-partition) 

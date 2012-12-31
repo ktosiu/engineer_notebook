@@ -17,5 +17,3 @@
 |Mv      | Move files `git mv from_file to_file`|
 |Log     | View the commit log |
 
-
-
