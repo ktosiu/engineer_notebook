@@ -1,4 +1,41 @@
-# 16 SSH Hacks
+#Secure Shell (SSH)
+
+Secure Shell ([SSH](http://www.openssh.org)) is a cryptographic network protocol for secure data communication, remote shell services or command execution and other secure network services between two networked computers that connects, via a secure channel over an insecure network, a server and a client (running SSH server and SSH client programs, respectively). The protocol specification distinguishes between two major versions that are referred to as SSH-1 and SSH-2.
+
+The best-known application of the protocol is for access to shell accounts on Unix-like operating systems, but it can also be used in a similar fashion for accounts on Windows. It was designed as a replacement for Telnet and other insecure remote shell protocols such as the Berkeley rsh and rexec protocols, which send information, notably passwords, in plaintext, rendering them susceptible to interception and disclosure using packet analysis. The encryption used by SSH is intended to provide confidentiality and integrity of data over an unsecured network, such as the Internet.[^1]
+
+[^1]: [Wikipedia entry source](http://en.wikipedia.org/wiki/Secure_Shell)
+
+## SSH Keys
+
+To increase security, you can disable password logins and rely on ssh public keys. To do
+this, take a look [here](https://wiki.archlinux.org/index.php/SSH_Keys) for details. Basic
+steps are:
+
+1. Generate an ssh key pair using either RSA (2048-4096 bit) or DSA (1024 bit) both 
+public and private keys. They will be stored in ~/.ssh with the public key having .pub 
+appended to the end.
+
+        ssh-keygen -t dsa -b 1024 -C "$(whoami)@$(hostname)-$(date -I)"
+    
+    Note you can create a key for a different username if you change $(whoami) to the user name you want.
+
+2. Copy the public key (.pub) to the server you will connect to:
+
+        ssh-copy-id username@remote-server.org 
+
+    This should update ~/.ssh/authorized_keys in the process. Also ensure the correct 
+protections are on the file by:
+
+        chmod 600 ~/.ssh/authorized_keys
+
+3. Edit /etc/sshd_config to disable password logins.
+
+        PasswordAuthentication no
+        ChallengeResponseAuthentication no
+
+
+## 16 SSH Hacks
 
 The original source for this work is [here](http://www.itworld.com/it-managementstrategy/261500/16-ultimate-openssh-hacks)
 
@@ -9,7 +46,7 @@ OpenSSH command!
 
 [Running SSH on a non-standard port](xhttp://www.itworld.com/nls_unixssh0500506)
 
-## SSH tips #16-14:Detecting MITM attacks
+### SSH tips #16-14:Detecting MITM attacks
 
 When you log into a remote computer for the first time, you are asked if you want to 
 accept the remote host's public key. Well how in the heck do you know if you should or 
@@ -40,7 +77,7 @@ create a unique fingerprint and randomart image:
     |                 |
     +-----------------+
 
-## SSH tip #16: Retrieve the fingerprint and randomart image of an SSH key
+### SSH tip #16: Retrieve the fingerprint and randomart image of an SSH key
 
 If you make a copy of this when you create new encryption keys, then you can fetch a 
 key's fingerprint and randomart image anytime to compare and make sure they have not 
@@ -48,19 +85,18 @@ changed:
 
     $ ssh-keygen -lvf  keyname
 
-## SSH tip #15: View all fingerprints and randomart images in known_hosts
+### SSH tip #15: View all fingerprints and randomart images in known_hosts
 
 And you can see all of them in your ~/.ssh/known_hosts file:
 
     $ ssh-keygen -lvf ~/.ssh/known_hosts
 
-## SSH tip #14: Verify server keys
+### SSH tip #14: Verify server keys
 
-You can see the fingerprint and randomart for any computer you're logging into by 
-configuring/etc/ssh/ssh_config on your client computer. Simply uncomment the VisualHostKey 
+You can see the fingerprint and randomart for any computer you're logging into by configuring/etc/ssh/ssh_config on your client computer. Simply uncomment the VisualHostKey 
 option and set it to yes:
 
-VisualHostKey yes
+    VisualHostKey yes
 
 Then login to any remote computer to test it:
 
@@ -86,7 +122,7 @@ copy, encrypted email, the scp command, secure ftp, read over the telephone...Th
 a successful MITM attack is small, but if you can figure out a relatively painless 
 verification method it's cheap insurance.
 
-## SSH tip #13: Attach to a remote GNU screen session
+### SSH tip #13: Attach to a remote GNU screen session
 
 You can attach a GNU screen session remotely over SSH; in this example we'll open a GNU 
 screen session on host1, and connect to it from host2. First open and then detach a screen 
@@ -113,14 +149,14 @@ Then re-attach to your screen session from host2:
 
 You don't have to name the screen session if there is only one.
 
-##vSSH tip #12: Launch a remote screen session
+###vSSH tip #12: Launch a remote screen session
 
 What if you don't have a running screen session? No worries, because you can launch one 
 remotely:
 
     host1 ~ $ ssh -t user@host2 /usr/bin/screen -xRR
 
-## SSH tip #11: SSHFS is better than NFS
+### SSH tip #11: SSHFS is better than NFS
 
 sshfs is better than NFS for a single user with multiple machines. I keep a herd of 
 computers running because it's part of my job to always be testing stuff. I like having 
@@ -139,7 +175,7 @@ Now you can browse the remote directory just as though it were local, and read, 
 move, and edit files all you want. The neat thing about sshfs is all you need is sshd 
 running on your remote machines, and thesshfs command installed on your client PCs.
 
-## SSH tip #10: Log in and run a command in one step
+### SSH tip #10: Log in and run a command in one step
 
 You can log in and establish your SSH session and then run commands, but when you have a 
 single command to run why not eliminate a step and do it with a single command? Suppose 
@@ -153,7 +189,7 @@ unsafe practice.) What if you want to run a long complex command, and don't want
 it out every time? One way is to put it in a Bash alias and use that. Another way is to 
 put your long complex command in a text file and run it according to tip #9.
 
-## SSH tip #9: Putting long commands in text files
+### SSH tip #9: Putting long commands in text files
 
 Put your long command in a plain text file on your local PC, and then use it this way 
 to log in and run it on the remote PC:
@@ -163,7 +199,7 @@ to log in and run it on the remote PC:
 Mind that you use straight quotations marks and not fancy ones copied from a Web page, 
 and back-ticks, not single apostrophes.
 
-##vSSH tip #8: Copy public keys the easy way
+###vSSH tip #8: Copy public keys the easy way
 
 The ssh-copy-id command is not as well-known as it should be, which is a shame because 
 it is a great time-saver. This nifty command copies your public key to a remote host in 
@@ -172,7 +208,7 @@ let you copy a private key by mistake. Specify which key you want to copy, like 
 
     $ ssh-copy-id -i .ssh/id_rsa.pub user@remote
 
-## SSH tip #7: Give SSH keys unique names
+### SSH tip #7: Give SSH keys unique names
 
 Speaking of key names, did you know you can name them anything you want? This helps when 
 you're administering a number of remote computers, like this example which creates then 
@@ -180,7 +216,7 @@ private key web-admin and public key web-admin.pub:
 
     $ ssh-keygen -t rsa -f .ssh/web-admin
 
-## SSH tip #6: Give SSH keys informative comments
+### SSH tip #6: Give SSH keys informative comments
 
 Another useful way to label keys is with a comment:
 
@@ -188,7 +224,7 @@ Another useful way to label keys is with a comment:
 
 Then you can read your comment which is appended to the end of the public key.
 
-## SSH tip #5: Read public key comments
+### SSH tip #5: Read public key comments
 
     $ less .ssh/web-admin.pub
     
@@ -196,13 +232,13 @@ Then you can read your comment which is appended to the end of the public key.
     
     [snip] KCLAqwTv8rhp downtown lan webserver
 
-## SSH tip #4: Logging in with server-specific keys
+### SSH tip #4: Logging in with server-specific keys
 
 Then when you log in, specify which key to use with the -i switch:
 
     $ ssh -i .ssh/web-admin.pub user@webserver
 
-## SSH tip #3: Fast easy known_hosts key management
+### SSH tip #3: Fast easy known_hosts key management
 
 I love this one because it's a nice time-saver, and it keeps my ~/.ssh/known_hosts files 
 tidy: using ssh-keygen to remove host keys from the ~/.ssh/known_hosts file. When the 
@@ -214,7 +250,7 @@ down to the correct line to delete:
 
 Computers are supposed to make our lives easier, and it's ever so lovely when they do.
 
-## SSH tip #2: SSH tunnel for road warriors
+### SSH tip #2: SSH tunnel for road warriors
 
 When you're at the mercy of hotel and coffee shop Internet, a nice secure SSH tunnel makes 
 your online adventures safer. To make this work you need a server that you control to act 
@@ -235,7 +271,7 @@ when I send messages, or simply change the default with a mouse click. You can a
 for any kind of service that you normally use from your home base, and need access to when 
 you're on the road.
 
-## 1 Favorite SSH tip: Evading silly web restrictions
+### 1 Favorite SSH tip: Evading silly web restrictions
 
 The wise assumption is that any public Internet is untrustworthy, so you can tunnel your 
 Web surfing too. My #1 SSH tip gets you past untrustworthy networks that might have 
@@ -261,58 +297,6 @@ get to it.
 To learn more try the excellent [Pro OpenSSH by Michael Stahnke]
 (http://www.apress.com/networking/openssh/9781590594766), and my own [Linux 
 Networking Cookbook](http://www.amazon.com/Linux-Networking-Cookbook-Carla-Schroder/dp/0596102488) 
-has more on secure remote administration including SSH, OpenVPN, and 
-remote graphical sessions, and configuring firewalls.
+has more on secure remote administration including SSH, OpenVPN, and remote graphical sessions, and configuring firewalls.
 
 
-
----
-
-
-
-Dropbox on Raspberry Pi via SSHFS
-POSTED BY MICHAEL ON JUL 10, 2012 IN RASPBERRY PI, TUTORIALS | 0 COMMENTS
-
-http://mitchtech.net/category/tutorials/raspberry-pi/
-
-
-This tutorial will demonstrate how to mount Dropbox (or any filesystem) over the network on the Raspberry Pi using SSHFS (Secure SHell FileSystem). For this procedure to work for your Dropbox share, you will need another machine somewhere that is running Dropbox, and is accessible to the Raspberry Pi via SSH.
-Note: The following is not actually specific to the Raspberry Pi, nor to Dropbox. The tutorial generalizes for other systems and architectures that are not officially supported by Dropbox, as well as for mounting of other non Dropbox shares over the network.
-How it works
-SSH is a secure protocol for communicating between machines. SSHFS is a tool that uses SSH to enable mounting of a remote filesystem on a local machine; the network is (mostly) transparent to the user.
-On the local computer where the SSHFS is mounted, the implementation makes use of the FUSE (Filesystem in Userspace) kernel module. The practical effect of this is that the end user can seamlessly interact with remote files being securely served over SSH just as if they were local files on his/her computer.
-Installation (remote host)
-The first step is to configure the remote host that the Raspberry Pi will connect to via SSH.  It will need to be running Dropbox, if you need to install it, follow the instructions for your respective OS here. If you are not yet a Dropbox user, and this has finally persuaded you to join, signup for Dropbox here.
-Next, the remote machine will need to be running OpenSSH server. For Windows and Mac instructions on how to set up OpenSSH server, I recommend this tutorial on Lifehacker.  For Linux users, OpenSSH server is available in most every package manager. To install on Ubuntu, for example:
-sudo apt-get install openssh-server
- 
-Installation (Raspberry Pi)
-Now that the remote host is configured, you can setup the mount on the Pi.  This first requires installation of the sshfs package.  Open a terminal on the Pi and install it like this:
-sudo apt-get install sshfs
-Then add the user pi to the FUSE users group:
-sudo gpasswd -a pi fuse
-Once added to the fuse group, log out and log back in again for the change to take effect. Next, create a directory to mount Dropbox (or other remote share)
-mkdir ~/Dropbox
-Now use sshfs to mount the remote share on the newly created mountpoint. Be sure to change the user@remote-host and path to Dropbox to match your own settings:
-sshfs -o idmap=user user@remote-host:/home/user/Dropbox ~/Dropbox
-For example, connecting to another machine on your local network will look something like this:
-sshfs -o idmap=user michael@192.168.1.100:/home/michael/Dropbox ~/Dropbox
-The idmap=user option ensures that files owned by the remote user are owned by the local user. If you don’t use idmap=user, files in the mounted directory might appear to be owned by someone else, because your computer and the remote computer have different ideas about the numeric user ID associated with each user name. idmap=user will not translate UIDs for other users.
-That’s all there is to it! To unmount,
-fusermount -u ~/Dropbox
-
-Automount Dropbox on boot
-To configure the Dropbox SSHFS to automatically mount at startup, we first need to enable SSH keyless remote login.  The first part of this task is to generate an RSA crypto key so we can securely login to the remote machine running Dropbox without entering a password.  In a terminal on the Pi, run:
-ssh-keygen -t rsa
-Hit enter three times when prompted, accepting the default settings for the RSA ssh keys. Now copy the public part of the key to the remote host using the ssh-copy-id command:
-ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote-host
-You will be prompted for the password on the remote one last time. Once entered, terminal output will confim the key was added sucessfully.
-Now that you can login remotely without password, the final task is to configure the share to automatically mount on startup. There are a few ways this could be accomplished, I decided to use cron for the task. Open the global crontab for editing:
-sudo crontab -e
-And add a line to the end like this:
-@reboot sshfs user@remote-host:/home/user/Dropbox /home/pi/Dropbox
-Then press CTRL and X to exit the editor, then Y to confirm the changes (if using nano, the default text editior).
-That’s it! Reboot the Pi, and your Dropbox share will mount automatically on startup.
-Another method to accomplish this task would be to add a line to /etc/fstab to automatically mount the Dropbox SSHFS share.
-Reference: https://help.ubuntu.com/community/SSHFS
- 
