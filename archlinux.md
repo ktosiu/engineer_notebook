@@ -99,59 +99,6 @@ protections are on the file by:
 
     pacman -Syu
 
-# Copying an image to the SD Card in Mac OS X
-
-These commands and actions need to be performed from an account that has administrator 
-privileges.
-
-1. Download the image from a [mirror or torrent](http://www.raspberrypi.org/downloads).
-
-2. Verify if the the hash key is the same (optional), in the terminal run:
-
-    shasum ~/Downloads/debian6-19-04-2012.zip
-
-3. Extract the image:
-
-    unzip ~/Downloads/debian6-19-04-2012.zip
-
-4. Attach the SD Card to the computer and identify the mount point
-
-    df -h
-
-Record the device name of the filesystem's partition, e.g. /dev/disk3s1
-
-5. Unmount the partition so that you will be allowed to overwrite the disk, note that 
-unmount is **NOT** the same as eject:
-
-    sudo diskutil unmount /dev/disk3s1
-
-Using the device name of the partition work out the raw device name for the entire disk, 
-by omitting the final "s1" and replacing "disk" with "rdisk" (this is very important: 
-you will lose all data on the hard drive on your computer if you get the wrong device 
-name). Make sure the device name is the name of the whole SD card as described above, 
-not just a partition of it (for example, rdisk3, not rdisk3s1. Similarly you might have 
-another SD drive name/number like rdisk2 or rdisk4, etc. -- recheck by using the df -h 
-command both before & after you insert your SD card reader into your Mac if you have 
-any doubts!): e.g. /dev/disk3s1 => /dev/rdisk3
-
-6. Write the image to the card with this command, using the raw disk device name from 
-above (read carefully the above step, to be sure you use the correct rdisk# here!):
-
-    sudo dd bs=1m if=~/archlinux-hf-2012-09-18.img of=/dev/rdisk3
-
-If the above command report an error(dd: bs: illegal numeric value), please change bs=1M 
-to bs=1m. 
-
-Note that dd will not feedback any information until there is an error or it 
-is finished, information will show and disk will re-mount when complete. However if you 
-are curious as to the progresss - ctrl-T (SIGINFO, the status argument of your tty) will 
-display some en-route statistics.
-
-7. After the dd command finishes, eject the card:
-
-    sudo diskutil eject /dev/rdisk3
-
-8. Insert it in the raspberry pi, and have fun
 
 ## Fonts
 

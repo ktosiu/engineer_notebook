@@ -5,13 +5,101 @@ version installed here is based on Debian Wheezy.
 
 	[kevin@raspberrypi ~]$ lscpu
 	Architecture:          armv6l
-	Byte Order:            Little Endian
+    Byte Order:            Little Endian
 	CPU(s):                1
 	On-line CPU(s) list:   0
+	Thread(s) per core:    1
+	Core(s) per socket:    1
+	Socket(s):             1
 
 Note this output doesn't really tell you much other than it is ARMv6.
+
+## Copying an image to the SD Card in Mac OS X
+
+These commands and actions need to be performed from an account that has administrator 
+privileges.
+
+1. Download the image from a [mirror or torrent](http://www.raspberrypi.org/downloads).
+
+2. Verify if the the hash key is the same (optional), in the terminal run:
+
+    shasum ~/Downloads/debian6-19-04-2012.zip
+
+3. Extract the image:
+
+    unzip ~/Downloads/debian6-19-04-2012.zip
+
+4. Attach the SD Card to the computer and identify the mount point
+
+    df -h
+
+Record the device name of the filesystem's partition, e.g. /dev/disk3s1
+
+5. Unmount the partition so that you will be allowed to overwrite the disk, note that 
+unmount is **NOT** the same as eject:
+
+    sudo diskutil unmount /dev/disk3s1
+
+Using the device name of the partition work out the raw device name for the entire disk, 
+by omitting the final "s1" and replacing "disk" with "rdisk" (this is very important: 
+you will lose all data on the hard drive on your computer if you get the wrong device 
+name). Make sure the device name is the name of the whole SD card as described above, 
+not just a partition of it (for example, rdisk3, not rdisk3s1. Similarly you might have 
+another SD drive name/number like disk2 or disk4, etc. -- recheck by using the df -h 
+command both before & after you insert your SD card reader into your Mac if you have 
+any doubts!): e.g. /dev/disk3s1 => /dev/disk3
+
+**Note:** Using rdisk3 might be faster than using disk3, need to look into this.
+
+6. Write the image to the card with this command, using the raw disk device name from 
+above (read carefully the above step, to be sure you use the correct rdisk# here!):
+
+    sudo dd bs=1m if=~/archlinux-hf-2012-09-18.img of=/dev/disk3
+
+If the above command report an error(dd: bs: illegal numeric value), please change bs=1M 
+to bs=1m. 
+
+Note that dd will not feedback any information until there is an error or it 
+is finished, information will show and disk will re-mount when complete. However if you 
+are curious as to the progresss - ctrl-T (SIGINFO, the status argument of your tty) will 
+display some en-route statistics.
+
+7. After the dd command finishes, eject the card:
+
+    sudo diskutil eject /dev/disk3
+
+8. Insert it in the raspberry pi, and have fun
+
+## SSH Keys
+
+To increase security, you can disable password logins and rely on ssh public keys. To do
+this, take a look [here](https://wiki.archlinux.org/index.php/SSH_Keys) for details. Basic
+steps are:
+
+1. Generate an ssh key pair using either RSA (2048-4096 bit) or DSA (1024 bit) both 
+public and private keys. They will be stored in ~/.ssh with the public key having .pub 
+appended to the end.
+
+        ssh-keygen -t dsa -b 1024 -C "$(whoami)@$(hostname)-$(date -I)"
     
-## Hack the Pi
+    Note you can create a key for a different username if you change $(whoami) to the user name you want.
+
+2. Copy the public key (.pub) to the server you will connect to:
+
+        ssh-copy-id username@remote-server.org 
+
+    This should update ~/.ssh/authorized_keys in the process. Also ensure the correct 
+protections are on the file by:
+
+        chmod 600 ~/.ssh/authorized_keys
+
+3. Edit /etc/ssh/sshd_config to disable password logins.
+
+    PasswordAuthentication no
+    ChallengeResponseAuthentication no
+
+    
+## Reconfiguring the Pi (speed and memory)
 
 You can change the Pi's default settings for CPU MHz and memory split (between RAM and
 GPU) using `raspi-config`. An alternate way is to simply edit the `/boot/config.txt`.
@@ -52,7 +140,9 @@ speed, put `force_turbo=1` in the `/boot/config.txt`.
     over_voltage=0
     force_turbo=1
 
-## Determine Kernel version
+More info can be found [here](http://www.raspberrypi.org/documentation/configuration/config-txt.md).
+
+## Determine Kernel version and upgrad
 
 You can determine the current linux kernel version by:
 
@@ -66,11 +156,9 @@ or
     [kevin@raspberrypi tmp]$ uname -a
     Linux raspberrypi 3.2.27+ #250 PREEMPT Thu Oct 18 19:03:02 BST 2012 armv6l GNU/Linux
 
+Get and install [rpi-update](http://github.com/Hexxeh/rpi-update):
 
-## Resize SD Memory Card
-
-A good answer is found [here](http://raspberrypi.stackexchange.com/questions/499/how-can-i-resize-my-root-partition) 
-for resizing your root partition.
+    sudo apt-get rpi-update
 
 ### Backup and Restore
 Use the `dd` command to make a full backup of the image:
@@ -93,15 +181,21 @@ or when compressed:
 
 	gzip -dc /path/to/image.gz | dd of=/dev/sdx 
 
-### Resize [Short]
+## [Raspi-Config](http://www.raspberrypi.org/documentation/configuration/raspi-config.md) 
 
-Use a script:
+This is a simple utility to reconfigure various things on the Pi. You can download it by:
 
+    sudo apt-get raspi-config
 	sudo raspi-config
 
-This works very nice and can be done at any time. Suggest selecting the bottom choice 
-first of updating raspi-config script first, just to make sure you have any bug fixes, 
-then run the resize option.
+Suggest selecting the advanced choice first so you can update raspi-config script first, just to make sure you have any bug fixes, 
+then run the resize option. You can change:
+
+* timezone (use internationalization option)
+* hostname
+* user password
+* resize SD memory card
+* configure sound through HDMI or 3.5 mm jack
 
 
 ## Sound
@@ -127,7 +221,9 @@ The audio output will be set to `automatic`, but can be changed:
 
 where `n` is 0=auto, 1=headphones, or 2=hdmi.
 
-## Updates
+
+## Software
+### Updates, Search, and List
 
 	sudo apt-get update
 	sudo apt-get upgrade
@@ -140,6 +236,25 @@ Now some packages will get `kept back` which seems to be some strange apt-get is
 update your system completely, do:
 
     sudo apt-get dist-upgrade
+
+You can also search for software by:
+
+    apt-cache showpkg [packagename]
+    
+Or list all packages installed on the computer by:
+
+    apt-cache pkgnames
+
+### Useful Software
+
+* SSH (installed/enabled by default)
+* Avahi (Bonjour for Linux)
+* Netatalk (file sharing, Pi will appear in finder)
+
+Install these with:
+
+    sudo apt-get install avahi-daemon
+    sudo apt-get install netatalk
 
 ## Lights
 
@@ -208,6 +323,8 @@ D-Link wireless N 150 (DWA-121) Pico USB adaptor install.
 	Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. 
 	Bus 001 Device 004: ID 2001:3308 D-Link Corp. DWA-121 802.11n Wireless N 150 Pico Adapter [Realtek RTL8188CUS]
 
+**Note:** If you don't see it, make sure it is the only USB device plugged in because it takes a lot of power. Otherwise attach to a powered USB hub and you should be fine.
+
 ###WPA2
 
 First create a file with the following information, but substitute in the correct ssid and psk (with quotes around them) for your network.
@@ -218,14 +335,15 @@ First create a file with the following information, but substitute in the correc
 	ap_scan=2
 	
 	network={
-	ssid="wireless access point name in quotes"
-	key_mgmt=WPA-PSK      
-	proto=WPA2
-	pairwise=CCMP TKIP
-	group=CCMP TKIP
-	psk="pass phrase in quotes"
+		ssid="wireless access point name in quotes"
+		key_mgmt=WPA-PSK      
+		proto=WPA2
+		pairwise=CCMP TKIP
+		group=CCMP TKIP
+		psk="pass phrase in quotes"
 	}
 
+**Note:** The ssid is case sensitive!! 
 
 ###Network Setup
 
@@ -252,6 +370,19 @@ Next you will need to change your network interface for a static IP to:
 		gateway 192.168.1.1
 
 Note that the wifi interface (wlan0) points to the WPA config file from above. Also there is an example dynamic interface commented out (`iface eth0 inet dhcp`) to show you how to use DHCP. The `lo` is the loopback interface, eth0 is the wired interface, with the wlan0 being the wireless interface. Also, the lines with `auto` in them tell linux to automatically start those interfaces during the bootup process.
+
+Or if you are fine with DHCP determining all your IP addresses:
+
+	auto lo
+
+	iface lo inet loopback
+	iface eth0 inet dhcp
+
+	allow-hotplug wlan0
+	iface wlan0 inet manual
+	wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+	iface default inet dhcp
+
 
 Finally to get the wireless up and running, use `ifup` to get things started.
 
@@ -288,6 +419,24 @@ Looking at the wlan0 interface, it has a 150 Mb/s data rate (802.11n), and sees 
 	          RX bytes:92009000 (87.7 MiB)  TX bytes:1154992 (1.1 MiB)
 
 Notice here a lot of dropped packets on the receive (RX).
+
+# USB Camera
+
+To use the Logitech C270 camera you need to add your user (pi in this case) to the video group:
+
+    sudo usermod -a -G video pi
+
+For other users, just change pi to the correct username. Then make sure the driver is loaded:
+
+    sudo modprobe uvcvideo
+
+You can double check it works by grabbing an image:
+
+    sudo apt-get install fswebcam
+    
+    fswebcam image.jpg
+
+If an image appeared, then all is good.
 
 # Other
 
