@@ -256,6 +256,15 @@ Install these with:
     sudo apt-get install avahi-daemon
     sudo apt-get install netatalk
 
+### Python
+
+You can use `pip` to install and keep python libraries up to date. Unfortunately `pip` is a horrible package manager, but it could be worse ... `apt-get` anyone? Some useful, undocumented commands:
+
+    sudo pip list --outdated
+    sudo pip install --upgrade
+
+Why the idiots who run `pip` don't make useful commands like `pip upgrade` or `pip outdated` I don't know. Instead there are duplicate (stupid) commands like `pip freeze` which is the same as `pip list`.
+
 ## Lights
 
 The main indicators are the lights on the front corner of the board. These are:
@@ -279,7 +288,7 @@ Now `/dev/i2c-0` and `/dev/i2c-1` should exist. Also, so see what is on the i2c 
 
 Now to explore the i2c bus try:
 
-	[kevin@raspberrypi ~]$ sudo i2cdetect -y 0
+	[kevin@raspberrypi ~]$ sudo i2cdetect -y 1
 	     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 	00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
 	10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
