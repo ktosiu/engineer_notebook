@@ -223,6 +223,15 @@ where `n` is 0=auto, 1=headphones, or 2=hdmi.
 
 
 ## Software
+
+Why have one program that does a few common sense things well when you can have multiple programs that do one or two things really badly!
+
+| Program   | Description                                                    |
+|-----------|----------------------------------------------------------------|
+| apt-get   | install programs: `apt-get install <prgm>`                     |
+| apt-cache | search for programs you can install: `apt-cache search <prgm>` |
+| dpkg      | list programs you have installed: `dpkg -l`                    |
+
 ### Updates, Search, and List
 
 	sudo apt-get update
@@ -243,7 +252,7 @@ You can also search for software by:
     
 Or list all packages installed on the computer by:
 
-    apt-cache pkgnames
+    dpkg -l
 
 ### Useful Software
 
