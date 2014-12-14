@@ -142,7 +142,7 @@ speed, put `force_turbo=1` in the `/boot/config.txt`.
 
 More info can be found [here](http://www.raspberrypi.org/documentation/configuration/config-txt.md).
 
-## Determine Kernel version and upgrad
+## Determine Kernel version and upgrade
 
 You can determine the current linux kernel version by:
 
@@ -155,6 +155,8 @@ or
 
     [kevin@raspberrypi tmp]$ uname -a
     Linux raspberrypi 3.2.27+ #250 PREEMPT Thu Oct 18 19:03:02 BST 2012 armv6l GNU/Linux
+
+In both cases, this is kernel version 3.2.27. Note that the *l* in `armv6l` refers to little endian.
 
 Get and install [rpi-update](http://github.com/Hexxeh/rpi-update):
 
@@ -181,9 +183,9 @@ or when compressed:
 
 	gzip -dc /path/to/image.gz | dd of=/dev/sdx 
 
-## [Raspi-Config](http://www.raspberrypi.org/documentation/configuration/raspi-config.md) 
+## Raspi-Config
 
-This is a simple utility to reconfigure various things on the Pi. You can download it by:
+This is a simple [utility](http://www.raspberrypi.org/documentation/configuration/raspi-config.md) to reconfigure various things on the Pi. You can download it by:
 
     sudo apt-get raspi-config
 	sudo raspi-config
@@ -228,7 +230,8 @@ Why have one program that does a few common sense things well when you can have 
 
 | Program   | Description                                                    |
 |-----------|----------------------------------------------------------------|
-| apt-get   | install programs: `apt-get install <prgm>`                     |
+| apt-get   | install: `apt-get install <prgm>`                              |
+|           | remove: `apt-get remove <prgm>` add `--purge` to remove configs|
 | apt-cache | search for programs you can install: `apt-cache search <prgm>` |
 | dpkg      | list programs you have installed: `dpkg -l`                    |
 
@@ -438,9 +441,9 @@ Looking at the wlan0 interface, it has a 150 Mb/s data rate (802.11n), and sees 
 
 Notice here a lot of dropped packets on the receive (RX).
 
-# Bittorren Sync
+# BitTorrent Sync
 
-You need to add the repository for `apt-get` to get the package from, first create the file.
+Use BitTorrent's [Sync](http://www.getsync.com) program to keep files on different computers up to date. You need to add the repository for `apt-get` to get the package from, first create the file.
 
     sudo nano /etc/apt/sources.list.d/btsync.list
 
@@ -498,13 +501,7 @@ You can double check it works by grabbing an image:
 
 If an image appeared, then all is good.
 
-# Other
 
-http://www.ros.org/wiki/Get%20Involved
-
-http://www.ros.org/wiki/DevelopersGuide
-
-http://www.ros.org/wiki/Distributions
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Kevin Walchko</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
