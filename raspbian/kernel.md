@@ -19,3 +19,7 @@ Get and install [rpi-update](http://github.com/Hexxeh/rpi-update):
 
     sudo apt-get rpi-update
 
+Now you can use rpi-update to get the current kernel:
+
+	sudo apt-get update rpi-update
+	sudo rpi-update

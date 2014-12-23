@@ -21,6 +21,8 @@ Table of Contents
 
 ## 2.3 [Python](./python.md)
 
+## 2.4 [Software Development with Git](./git.md)
+
 
 # 3 Hardware
 
