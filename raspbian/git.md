@@ -46,21 +46,21 @@ basically:
 
 1. create a key: ssh-keygen -t rsa -C "pi@bender.local"
 
-    pi@bender ~ $ eval "$(ssh-agent -s)"
-    Agent pid 12480
-    pi@bender ~ $ ssh-add ~/.ssh/id_rsa
-    Identity added: /home/pi/.ssh/id_rsa (/home/pi/.ssh/id_rsa)
+		pi@bender ~ $ eval "$(ssh-agent -s)"
+		Agent pid 12480
+		pi@bender ~ $ ssh-add ~/.ssh/id_rsa
+		Identity added: /home/pi/.ssh/id_rsa (/home/pi/.ssh/id_rsa)
 
 2. Go to github and add a new ssh key under your profile. Copy/paste in the key (use `more ~/.ssh/id_rsa.pub`) making sure not to add or remove white space.
 
 3. Then try to ssh in:
 
-    pi@bender ~ $ ssh -T git@github.com
-    The authenticity of host 'github.com (192.30.252.128)' can't be established.
-    RSA key fingerprint is 16:47:ac:a4:76:28:2d:34:63:1b:56:4d:74:7f:76:48.
-    Are you sure you want to continue connecting (yes/no)? yes
-    Warning: Permanently added 'github.com,192.30.252.128' (RSA) to the list of known hosts.
-    Hi walchko! You've successfully authenticated, but GitHub does not provide shell access.
+		pi@bender ~ $ ssh -T git@github.com
+		The authenticity of host 'github.com (192.30.252.128)' can't be established.
+		RSA key fingerprint is 16:47:ac:a4:76:28:2d:34:63:1b:56:4d:74:7f:76:48.
+		Are you sure you want to continue connecting (yes/no)? yes
+		Warning: Permanently added 'github.com,192.30.252.128' (RSA) to the list of known hosts.
+		Hi walchko! You've successfully authenticated, but GitHub does not provide shell access.
 
 **Success** ... enjoy!
 
@@ -70,33 +70,33 @@ Read [this](http://rogerdudler.github.io/git-guide/) awesome guide
 
 1. Make sure your current copy is up to date
 
-    git pull
+        git pull
 
 2. Create a new branch to hold your new feature
 
-    git checkout -b my-cool-new-thing
+        git checkout -b my-cool-new-thing
 
 3. Edit code
 4. Mark files for change
 
-    git add *
+        git add *
     
 5. Commit files (locally) to HEAD
 
-    git commit -m "what did you do?"
-    pi@bender ~/soccer2/IMU $ git push origin master
-    Counting objects: 12, done.
-    Compressing objects: 100% (8/8), done.
-    Writing objects: 100% (8/8), 736 bytes, done.
-    Total 8 (delta 6), reused 0 (delta 0)
-    To git@github.com:walchko/soccer2.git
-       8162ade..cd9a476  master -> master
+		git commit -m "what did you do?"
+		pi@bender ~/soccer2/IMU $ git push origin master
+		Counting objects: 12, done.
+		Compressing objects: 100% (8/8), done.
+		Writing objects: 100% (8/8), 736 bytes, done.
+		Total 8 (delta 6), reused 0 (delta 0)
+		To git@github.com:walchko/soccer2.git
+		   8162ade..cd9a476  master -> master
 
 6. Push changes upstream, back to the repository so everyone can use them
 
-    git push origin master
+		git push origin master
     or
-    git push origin <branch>
+		git push origin <branch>
     
 To undo what you have committed already and basically create an anti-patch for each commit:
 

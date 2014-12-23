@@ -140,9 +140,9 @@ Don't ever make a swap partition on the sd card ... it is too slow and will redu
 4. Get rid of RPi's file base swap by removing the packages: `sudo apt-get remove dphy-swapfile`
 5. Make sure swap is working: `swapon -s`
 
-	pi@calculon ~ $ swapon -s
-	Filename				Type		Size	Used	Priority
-	/dev/sda2                               partition	4295676	0	-1
+	   pi@calculon ~ $ swapon -s
+	   Filename				Type		Size	Used	Priority
+	   /dev/sda2                               partition	4295676	0	-1
 
 
 
