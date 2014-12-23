@@ -1,5 +1,6 @@
 # Raspberry Pi (RPi)
 
+![rpi board](./pics/rpi.png)
 
 ## Lights
 
