@@ -1,6 +1,8 @@
 
 # BitTorrent Sync
 
+![bt-sync logo](./pics/bt-sync.png)
+
 Use BitTorrent's [Sync](http://www.getsync.com) program to keep files on different computers up to date. You need to add the repository for `apt-get` to get the package from, first create the file.
 
     sudo nano /etc/apt/sources.list.d/btsync.list

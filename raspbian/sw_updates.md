@@ -1,5 +1,6 @@
+# Updating Software
 
-## Software
+## Debian Packaged Software
 
 Why have one program that does a few common sense things well when you can have multiple programs that do one or two things really badly!
 
@@ -31,4 +32,15 @@ You can also search for software by:
 Or list all packages installed on the computer by:
 
     dpkg -l
+
+# Python Packages 
+
+Alot of very useful packages are available from [PyPI](https://pypi.python.org/pypi) and can be installed using `pip`.
+
+You can use `pip` to install and keep python libraries up to date. Unfortunately `pip` is a horrible package manager, but it could be worse ... `apt-get` anyone? Some useful, undocumented commands:
+
+    sudo pip list --outdated
+    sudo pip install --upgrade
+
+Why the idiots who run `pip` don't make useful commands like `pip upgrade` or `pip outdated` I don't know. Instead there are duplicate (stupid) commands like `pip freeze` which is the same as `pip list`.
 

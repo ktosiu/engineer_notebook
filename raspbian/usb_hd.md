@@ -125,7 +125,26 @@ Add the following to fstab so it mounts on boot.
 	sudo nano /etc/fstab
 	/dev/sda1 /mnt/usbdisk auto defaults,user 0 1
 
-This sets the file system to `auto` and `user` enables write permissions for all users. The 0 is for debugging and 1 is for a file system check at boot.
+This sets the file system to `auto` and `user` enables write permissions for all users. The 0 is for debugging and 1 is for a file system check at boot. You can test this out by:
+
+	sudo mount -a
+
+
+## Swap Partition on Hard Drive
+
+Don't ever make a swap partition on the sd card ... it is too slow and will reduce the card's life span.
+
+1. Create a partition for swap on say `/dev/sda2` following the method above, then exit `parted`. 
+2. Use `mkswap /dev/sda2` to set it up. 
+3. Edit `/etc/fstab` and add the following line: `/dev/sda2 none swap sw 0 0`
+4. Get rid of RPi's file base swap by removing the packages: `sudo apt-get remove dphy-swapfile`
+5. Make sure swap is working: `swapon -s`
+
+	pi@calculon ~ $ swapon -s
+	Filename				Type		Size	Used	Priority
+	/dev/sda2                               partition	4295676	0	-1
+
+
 
 ## Making available to OSX
 

@@ -1,4 +1,6 @@
-## Install
+## Install and Setup
+
+![rpi-org logo](./pics/rpi-org.png)
 
 [Raspbian](http://www.raspbian.org) is a Raspberry optimized version of Debian. The 
 version installed here is based on Debian Wheezy.
@@ -15,6 +17,8 @@ version installed here is based on Debian Wheezy.
 Note this output doesn't really tell you much other than it is ARMv6.
 
 ## Copying an image to the SD Card in Mac OS X
+
+![sd logo](./pics/sd.jpg)
 
 These commands and actions need to be performed from an account that has administrator 
 privileges.
@@ -150,4 +154,27 @@ then run the resize option. You can change:
 * resize SD memory card
 * configure sound through HDMI or 3.5 mm jack
 
+
+## Sound
+
+Sound is still experimental, but can be enabled in the current session by:
+
+	sudo apt-get install alsa-utils
+	sudo modprobe snd_bcm2835
+	sudo aplay /usr/share/sounds/alsa/Front_Center.wav
+ 
+To make the changes permanent for the next reboot, ensure the module is initialized on 
+boot, add snd_bcm2835 to `/etc/modules`
+
+Also make sure you are part of group audio:
+
+	sudo gpasswd -a kevin audio
+
+This will allow you to play audio commands without being root (via sudo). 
+
+The audio output will be set to `automatic`, but can be changed:
+
+	sudo amixer cset numid=3 n
+
+where `n` is 0=auto, 1=headphones, or 2=hdmi.
 
