@@ -23,6 +23,8 @@ Table of Contents
 
 ## 2.4 [Software Development with Git](./git.md)
 
+## 2.5 [Security](./lan_protection.md)
+
 
 # 3 Hardware
 
