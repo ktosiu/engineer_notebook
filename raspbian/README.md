@@ -12,6 +12,8 @@ Table of Contents
 
 ## 1.3 [Software Updates](./sw_updates.md)
 
+## 1.4 [Services](./services.md)
+
 
 # 2 Software
 
