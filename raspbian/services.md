@@ -46,6 +46,47 @@ To setup daemons to run at boot time or be able to easily start/stop them, we ne
 
 	exit 0
 
+Another example:
+
+	# /etc/init.d/nodesjs
+	#
+
+	# Some things that run always
+	DAEMON_USER=root
+	DIR=/usr/local/bin
+	DAEMON_NAME=http-server
+	DAEMON=$DIR/$DAEMON_NAME   
+	PIDFILE=/var/run/$DAEMON_NAME.pid
+	DAEMON_full="$DAEMON -- /mnt/usbdrive -p 9000 -s"
+
+	. /lib/lsb/init-functions
+
+	# Carry out specific functions when asked to by the system
+	case "$1" in
+	  start)
+			echo "Starting Nodejs HTTP Server for movies"
+			echo $DAEMON_full
+			log_daemon_msg "Starting system $DAEMON_NAME daemon"
+			start-stop-daemon --start --background --pidfile $PIDFILE --make-pidfile --user $DAEMON_USER --chuid $DAEMON_USER --startas $DAEMON_full 
+			log_end_msg $?
+			;;
+	  stop)
+			log_daemon_msg "Stopping system $DAEMON_NAME daemon"
+			start-stop-daemon --stop --pidfile $PIDFILE --retry 10
+			log_end_msg $?
+			;;
+	  status)
+			status_of_proc status_of_proc $DAEMON_NAME $DAEMON && exit 0 || exit $?
+			;;
+	  *)
+			echo "Usage: /etc/init.d/nodejs-movies {start|status|stop}"
+			exit 1
+			;;
+	esac
+
+	exit 0
+
+
 Change the permissions with:
 
 	chmod 755 /etc/init.d/netscan

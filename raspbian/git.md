@@ -30,7 +30,7 @@ Since we will work remotely, we need to tell git who we are. Git stores that inf
 
 ## Working with Git
 
-First clone a repository, make sure you use the ssh address and not the default https one:
+First clone a repository, make sure you use the `ssh` address and not the default https one:
 
     git clone git@github.com:walchko/soccer2.git
 
