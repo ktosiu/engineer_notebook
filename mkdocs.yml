@@ -1,1 +1,13 @@
 site_name: Engineering Notebook
+site_url: http://engineering-notebook.readthedocs.org
+site_description: Engineering notes
+
+repo_url: https://github.com/walchko/engineer_notebook
+
+pages:
+- ['index.md', 'Home', 'something']
+- ['arch_linux/archlinux.md', 'Arch Linux', 'Arch Linux']
+- ['OSX/osx.md', 'OSX', 'OSX']
+- ['raspbian/kernel.md', 'Raspbian', 'Linux kernel']
+
+copyright: Copyright &copy; 2015, Kevin J. Walchko
