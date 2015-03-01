@@ -1,6 +1,6 @@
 # Bluetooth
 
-![bluetooth logo](./pics/bluetooth.png)
+![bluetooth logo](pics/bluetooth.png)
 
 ## Dongle
 

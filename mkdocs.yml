@@ -16,7 +16,7 @@ pages:
 - ['raspbian/bt_sync.md', 'Raspbian', 'Bittorrent Sync']
 - ['raspbian/git.md', 'Raspbian', 'Git']
 - ['raspbian/i2c.md', 'Raspbian', 'I2C']
-- ['raspbian/lan_protection.md', 'Raspbian', 'Lan']
+- ['raspbian/lan_protection.md', 'Raspbian', 'Lan Security Tools']
 - ['raspbian/nodejs.md', 'Raspbian', 'Node.js']
 - ['raspbian/python.md', 'Raspbian', 'Python']
 - ['raspbian/rpi.md', 'Raspbian', 'RPi']
@@ -27,5 +27,6 @@ pages:
 - ['raspbian/usb_camera.md', 'Raspbian', 'USB Camera']
 - ['raspbian/usb_hd.md', 'Raspbian', 'USB Hard Drive']
 - ['raspbian/wifi.md', 'Raspbian', 'Wifi']
+- ['engineering/statistics.md', 'Engineering','Statistics']
 
 copyright: Copyright &copy; 2015, Kevin J. Walchko
