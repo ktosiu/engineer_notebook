@@ -28,5 +28,6 @@ pages:
 - ['raspbian/usb_hd.md', 'Raspbian', 'USB Hard Drive']
 - ['raspbian/wifi.md', 'Raspbian', 'Wifi']
 - ['engineering/statistics.md', 'Engineering','Statistics']
+- ['engineering/ip_subnetting.md', 'Engineering','IP Subnetting']
 
 copyright: Copyright &copy; 2015, Kevin J. Walchko

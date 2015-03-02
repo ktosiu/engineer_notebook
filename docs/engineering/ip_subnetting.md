@@ -22,15 +22,15 @@ You need to chop along clean binary division as shown below:
 
 ![](img/subnetting_b.png)
 
-## Classes
+## [Network Classes](http://en.wikipedia.org/wiki/Classful_network#Introduction_of_address_classes)
 
 |Class | IP Range | Subnet Bits | Mask Bits | Notes |
 |------|----------|-------------|-----------|-------|
-| A | 0.0.0.0 to 127.255.255.255   | 24 | 8  | is the first half of the address space |
-| B | 128.0.0.0 to 191.255.255.255 | 16 | 16 | is half the remaining address space |
-| C | 192.0.0.0 to 223.255.255.255 | 8  | 24 | is half the remaining address space|
-| D | 224.0.0.0 to 239.255.255.255 | 24 | 8  | is half the remaining address space for multicast |
-| E | | | | is everything remaining |
+| A | 0.0.0.0 to 127.255.255.255   | 24 | 8  | the first half of the address space |
+| B | 128.0.0.0 to 191.255.255.255 | 16 | 16 | half the remaining address space |
+| C | 192.0.0.0 to 223.255.255.255 | 8  | 24 | half the remaining address space|
+| D | 224.0.0.0 to 239.255.255.255 | undefined | undefined | half the remaining address space for multicast |
+| E | 240.0.0.0 to 255.255.255.255 | undefined | undefined | everything remaining |
 
 ![](img/subnetting_h.png)
 
@@ -74,5 +74,26 @@ of the address range, or 192.168.1.x.
 ## Calculator
 
 [IP address calculator](http://www.subnet-calculator.com)
+[Another one](http://jodies.de/ipcalc?)
 
-Network Class C, 192.168.0.1/24 mask: 255.255.255.0, 254 hosts, subnet id: 192.168.0.0 broadcast id: 192.168.0.255
+	192.168.0.1/16:
+	Address:   192.168.0.1           11000000.10101000 .00000000.00000001
+	Netmask:   255.255.0.0 = 16      11111111.11111111 .00000000.00000000
+	Wildcard:  0.0.255.255           00000000.00000000 .11111111.11111111
+	=>
+	Network:   192.168.0.0/16        11000000.10101000 .00000000.00000000 (Class C)
+	Broadcast: 192.168.255.255       11000000.10101000 .11111111.11111111
+	HostMin:   192.168.0.1           11000000.10101000 .00000000.00000001
+	HostMax:   192.168.255.254       11000000.10101000 .11111111.11111110
+	Hosts/Net: 65534                 (Private Internet)
+
+	192.168.1.1/24:
+	Address:   192.168.1.1           11000000.10101000.00000001 .00000001
+	Netmask:   255.255.255.0 = 24    11111111.11111111.11111111 .00000000
+	Wildcard:  0.0.0.255             00000000.00000000.00000000 .11111111
+	=>
+	Network:   192.168.1.0/24        11000000.10101000.00000001 .00000000 (Class C)
+	Broadcast: 192.168.1.255         11000000.10101000.00000001 .11111111
+	HostMin:   192.168.1.1           11000000.10101000.00000001 .00000001
+	HostMax:   192.168.1.254         11000000.10101000.00000001 .11111110
+	Hosts/Net: 254                   (Private Internet)
