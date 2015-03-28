@@ -1,10 +1,6 @@
-# Raspberry Pi (RPi)
+# Hardware
 
-![rpi board](./pics/rpi.png)
-
-## Where to buy?
-
-I always buy mine from [Adafruit](https://www.adafruit.com), they have tons of other great stuff at great prices. They also make make lots of example code and drivers available for their products.
+![pinout B+](./pics/rpi.png)
 
 ## Pinouts
 

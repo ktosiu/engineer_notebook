@@ -1,4 +1,8 @@
-# Git Cheat Sheet
+# Git
+
+![github logo](./pics/github.png)
+
+## Git Cheat Sheet
 
 |Command | Definition                  |
 |-----   |-----------------------------|

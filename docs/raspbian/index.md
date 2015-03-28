@@ -1,8 +1,12 @@
-# OSX
+# Raspberry Pi (RPi)
 
-![](./pics/apple.png)
+![rpi board](./pics/rpi-org.png)
 
-This is my main unix operating system I use daily.
+## Where to buy?
+
+I always buy mine from [Adafruit](https://www.adafruit.com), they have tons of other great stuff at great prices. They also make make lots of example code and drivers available for their products.
+
+
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Kevin Walchko</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.

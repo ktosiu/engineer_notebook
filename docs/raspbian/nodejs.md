@@ -1,6 +1,10 @@
-# Installing Node.js
+# Node.js
 
-The version in apt-get is old, do:
+![nodejs logo](./pics/nodejs.png)
+
+## Installing Node.js
+
+The version in apt-get is old (at the time of this writing), do:
 
 	wget http://nodejs.org/dist/v0.10.28/node-v0.10.28-linux-arm-pi.tar.gz
 	tar -zxvf node-v0.10.28-linux-arm-pi.tar.gz 
@@ -13,3 +17,8 @@ The version in apt-get is old, do:
 	ln -s /opt/node/bin/npm /usr/bin/npm
 
 	sudo npm install -g http-server
+
+
+## Packages
+
+Nodejs  uses Node Package Manager (npm) for add/removing packages. The best way is to build a package.json file in your project and run `npm install` to get what you need. See these [tutorials(https://docs.npmjs.com/) for more info.

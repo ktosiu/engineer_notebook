@@ -1,3 +1,6 @@
+# Linux Kernel
+
+![linux logo](./pics/linux.png)
 
 ## Determine Kernel version and upgrade
 
