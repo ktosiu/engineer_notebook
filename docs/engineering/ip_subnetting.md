@@ -20,7 +20,7 @@ accounts for both the network and broadcast id's
 
 You need to chop along clean binary division as shown below:
 
-![](img/subnetting_b.png)
+![](../pics/subnetting_b.png)
 
 ## [Network Classes](http://en.wikipedia.org/wiki/Classful_network#Introduction_of_address_classes)
 
@@ -32,7 +32,7 @@ You need to chop along clean binary division as shown below:
 | D | 224.0.0.0 to 239.255.255.255 | undefined | undefined | half the remaining address space for multicast |
 | E | 240.0.0.0 to 255.255.255.255 | undefined | undefined | everything remaining |
 
-![](img/subnetting_h.png)
+![](../pics/subnetting_h.png)
 
 ## [Private Subnetworks](http://en.wikipedia.org/wiki/Private_network)
 
@@ -52,12 +52,12 @@ The 169.254.0.0 addresses are only used when DHCP server is not available.
 * 10 bits = 1024 addresses
 * 11 bits = 2048 addresses
 
-![](img/subnetting_a.png)
+![](../pics/subnetting_a.png)
 
 
 
 
-![](img/subnetting_c.png)
+![](../pics/subnetting_c.png)
 
 ## Masks
 
