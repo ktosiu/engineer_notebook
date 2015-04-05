@@ -74,6 +74,6 @@ are different.
     std(x) = 1.7078
     var(x) = 2.9167
 
-
+  
 #References
 1. http://www.mathsisfun.com/data/index.html

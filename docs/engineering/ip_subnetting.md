@@ -20,7 +20,7 @@ accounts for both the network and broadcast id's
 
 You need to chop along clean binary division as shown below:
 
-![](./pics/subnetting_b.png)
+![](./pics/subnetting_b.png)  
 
 ## [Network Classes](http://en.wikipedia.org/wiki/Classful_network#Introduction_of_address_classes)
 
