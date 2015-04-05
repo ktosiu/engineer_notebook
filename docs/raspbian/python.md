@@ -70,3 +70,17 @@ Run command line program
 	python -m module.script
 
 where `module` is your package name and `script` is the python script that does something.
+
+
+## PyPi
+
+Some good resources are [Python Packaging Guide](https://packaging.python.org/en/latest/distributing.html#uploading-your-project-to-pypi) and [Tom Christie](https://tom-christie.github.io/articles/pypi/) for more info.
+
+1. Create an account at pypi.org
+2. Create a package repository at pypi.org using the [web form](https://pypi.python.org/pypi?%3Aaction=submit_form) and uploading the PKG-INFO file
+3. Run a test to ensure no problems `python setup.py test`
+4. Create the package for upload `python setup.py sdist`
+5. Upload package to pypi.org `twine upload dist/*`
+
+Twine can be installed using `pip install twine` which will secure your upload and protect your password. Also the username and password are stored in a `.pypirc` in your home directory.
+
