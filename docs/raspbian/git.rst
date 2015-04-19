@@ -1,10 +1,8 @@
 Git
 ===
 
-.. figure:: ./pics/github.png
-   :alt: github logo
-
-   github logo
+.. figure:: ../pics/github.png
+   :width: 200px
 
 Git Cheat Sheet
 ---------------

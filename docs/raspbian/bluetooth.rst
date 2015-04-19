@@ -4,8 +4,6 @@ Bluetooth
 .. figure:: ../pics/bluetooth.png
    :width: 200px
 
-   bluetooth logo
-
 Dongle
 ------
 

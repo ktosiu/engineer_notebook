@@ -1,5 +1,5 @@
 WiFi
-----
+====
 
 D-Link wireless N 150 (DWA-121) Pico USB adaptor install.
 
@@ -7,8 +7,8 @@ D-Link wireless N 150 (DWA-121) Pico USB adaptor install.
 
     [kevin@raspberrypi ~]$ lsusb
     Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-    Bus 001 Device 002: ID 0424:9512 Standard Microsystems Corp. 
-    Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. 
+    Bus 001 Device 002: ID 0424:9512 Standard Microsystems Corp.
+    Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp.
     Bus 001 Device 004: ID 2001:3308 D-Link Corp. DWA-121 802.11n Wireless N 150 Pico Adapter [Realtek RTL8188CUS]
 
 **Note:** If you don't see it, make sure it is the only USB device
@@ -23,14 +23,14 @@ the correct ssid and psk (with quotes around them) for your network.
 
 ::
 
-    [kevin@raspberrypi ~]$ more /etc/wpa_supplicant/wpa_supplicant.conf 
+    [kevin@raspberrypi ~]$ more /etc/wpa_supplicant/wpa_supplicant.conf
     ctrl_interface=/var/run/wpa_supplicant
     ctrl_interface_group=0
     ap_scan=2
 
     network={
         ssid="wireless access point name in quotes"
-        key_mgmt=WPA-PSK      
+        key_mgmt=WPA-PSK
         proto=WPA2
         pairwise=CCMP TKIP
         group=CCMP TKIP
@@ -46,12 +46,12 @@ Next you will need to change your network interface for a static IP to:
 
 ::
 
-    [kevin@raspberrypi ~]$ more /etc/network/interfaces 
+    [kevin@raspberrypi ~]$ more /etc/network/interfaces
     auto lo
     iface lo inet loopback
 
     # dynamic interface
-    #iface eth0 inet dhcp 
+    #iface eth0 inet dhcp
 
     # static interface
     iface eth0 inet static
@@ -106,8 +106,8 @@ all is well by using ``iwconfig``.
     lo        no wireless extensions.
 
     wlan0     IEEE 802.11bgn  ESSID:"GC9J2"  Nickname:"<WIFI@REALTEK>"
-              Mode:Managed  Frequency:2.437 GHz  Access Point: 00:7F:28:05:4D:D9   
-              Bit Rate:150 Mb/s   Sensitivity:0/0  
+              Mode:Managed  Frequency:2.437 GHz  Access Point: 00:7F:28:05:4D:D9
+              Bit Rate:150 Mb/s   Sensitivity:0/0
               Retry:off   RTS thr:off   Fragment thr:off
               Power Management:off
               Link Quality=100/100  Signal level=76/100  Noise level=0/100
@@ -122,12 +122,12 @@ and sees a signal strength of 76/100.
 ::
 
     [kevin@raspberrypi ~]$ ifconfig wlan0
-    wlan0     Link encap:Ethernet  HWaddr fc:75:16:04:96:5f  
+    wlan0     Link encap:Ethernet  HWaddr fc:75:16:04:96:5f
               inet addr:192.168.1.121  Bcast:192.168.1.255  Mask:255.255.255.0
               UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
               RX packets:59222 errors:0 dropped:63403 overruns:0 frame:0
               TX packets:11365 errors:0 dropped:0 overruns:0 carrier:0
-              collisions:0 txqueuelen:1000 
+              collisions:0 txqueuelen:1000
               RX bytes:92009000 (87.7 MiB)  TX bytes:1154992 (1.1 MiB)
 
 Notice here a lot of dropped packets on the receive (RX).

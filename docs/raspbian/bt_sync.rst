@@ -1,10 +1,8 @@
 BitTorrent Sync
 ===============
 
-.. figure:: ./pics/bt-sync.png
-   :alt: bt-sync logo
-
-   bt-sync logo
+.. figure:: ../pics/bt-sync.png
+   :width: 200px
 
 Use BitTorrent's `Sync <http://www.getsync.com>`__ program to keep files
 on different computers up to date. You need to add the repository for

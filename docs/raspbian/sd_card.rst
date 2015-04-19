@@ -1,10 +1,11 @@
+SD Card
+=======
+
 Install and Setup
 -----------------
 
-.. figure:: ./pics/rpi-org.png
-   :alt: rpi-org logo
-
-   rpi-org logo
+.. figure:: ../pics/rpi-org.png
+   :width: 200px
 
 `Raspbian <http://www.raspbian.org>`__ is a Raspberry optimized version
 of Debian. The version installed here is based on Debian Wheezy.
@@ -116,7 +117,7 @@ simply edit the ``/boot/config.txt``.
     [kevin@raspberrypi ~]$ more /proc/cpuinfo
     Processor   : ARMv6-compatible processor rev 7 (v6l)
     BogoMIPS    : 795.44
-    Features    : swp half thumb fastmult vfp edsp java tls 
+    Features    : swp half thumb fastmult vfp edsp java tls
     CPU implementer : 0x41
     CPU architecture: 7
     CPU variant : 0x0
@@ -141,7 +142,7 @@ system. If you want to always be running at max speed, put
 
 ::
 
-    [kevin@raspberrypi ~]$ more /boot/config.txt 
+    [kevin@raspberrypi ~]$ more /boot/config.txt
     #uncomment to overclock the arm. 700 MHz is the default.
     arm_freq=800
 
@@ -185,7 +186,7 @@ or when compressed:
 
 ::
 
-    gzip -dc /path/to/image.gz | dd of=/dev/sdx 
+    gzip -dc /path/to/image.gz | dd of=/dev/sdx
 
 Raspi-Config
 ------------

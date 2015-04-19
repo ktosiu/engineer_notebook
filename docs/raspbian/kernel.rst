@@ -1,10 +1,8 @@
 Linux Kernel
 ============
 
-.. figure:: ./pics/linux.png
-   :alt: linux logo
-
-   linux logo
+.. figure:: ../pics/linux.png
+   :width: 200px
 
 Determine Kernel version and upgrade
 ------------------------------------
@@ -14,7 +12,7 @@ You can determine the current linux kernel version by:
 ::
 
     [kevin@raspberrypi tmp]$ more /proc/version
-    Linux version 3.2.27+ (dc4@dc4-arm-01) (gcc version 4.7.2 20120731 (prerelease) 
+    Linux version 3.2.27+ (dc4@dc4-arm-01) (gcc version 4.7.2 20120731 (prerelease)
     (crosstool-NG linaro-1.13.1+bzr2458 - Linaro GCC 2012.08) ) #250 PREEMPT Thu Oct
      18 19:03:02 BST 2012
 

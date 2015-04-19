@@ -2,9 +2,7 @@ Raspberry Pi (RPi)
 ==================
 
 .. figure:: ./pics/rpi-org.png
-   :alt: rpi board
-
-   rpi board
+   :width: 200px
 
 --------------
 

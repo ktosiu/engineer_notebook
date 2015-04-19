@@ -1,10 +1,8 @@
 Python
 ======
 
-.. figure:: ./pics/python.png
-   :alt: python logo
-
-   python logo
+.. figure:: ../pics/python.png
+   :width: 200px
 
 Python Modules
 --------------

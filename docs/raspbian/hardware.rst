@@ -2,9 +2,7 @@ Hardware
 ========
 
 .. figure:: ./pics/rpi.png
-   :alt: pinout B+
-
-   pinout B+
+   :width: 200px
 
 Pinouts
 -------
@@ -15,9 +13,7 @@ pinouts for the different versions. A great resource is
 what.
 
 .. figure:: ./pics/pinout.jpeg
-   :alt: pinout B+
-
-   pinout B+
+   :width: 300px
 
 Lights
 ------
