@@ -4,26 +4,14 @@ Statistics
 Expected Value
 --------------
 
-The predicted value of a variable, calculated as the sum of all possible
-values (
+The predicted value of a variable, calculated as the sum of all possible values (:math:`x_i`) each multiplied by the probability (:math:`p_i`) of its occurrence.
 
-.. math:: $x_i
-
-\ :math:`) each multiplied by the probability (`\ 
-
-.. math:: p_i
-
-\ $) of its occurrence.
-
-.. math::  E(x) = x_1p_1 + x_2p_2 + ... + x_np_n 
-
-.. math::  E(x) = \mu 
-
-The expected value is the mean of a random variable (greek letter
-
-.. math:: $\mu
-
-\ $).
+.. math::  
+    E(x) = x_1p_1 + x_2p_2 + ... + x_np_n 
+    
+    E(x) = \mu 
+    
+The expected value is the mean of a random variable (greek letter :math:`\mu`).
 
 Example
 ~~~~~~~
@@ -44,11 +32,7 @@ Variance
 
 Variance describes how far a set of numbers are spread out from each
 other from the mean. It is the average of the *squared* differences from
-the mean. It is also the covariance of
-
-.. math:: $x
-
-\ $ with it self.
+the mean. It is also the covariance of :math:`x` with it self.
 
 .. math::     var(x) = E[(x-\mu)^2] = (x_1-\mu)^2p_1 + ... + (x_n-\mu)^2p_n = cov(x,x) = E[(x-\mu)(x-\mu)] 
 
