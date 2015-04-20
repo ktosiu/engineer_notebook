@@ -3,6 +3,8 @@ sudo: false
 python:
   - "2.7"
 # command to install dependencies
-install:  cd docs && make -f Makefile html
+install:  pip install sphinx
 # command to run tests
-script: nosetests 
+script: 
+ - cd docs
+ - make html 
