@@ -9,6 +9,10 @@ Table of Contents
 .. figure:: ./pics/linux.jpg
    :width: 200px
 
+.. image:: https://readthedocs.org/projects/engineering-notebook/badge/?version=latest
+   :target: https://readthedocs.org/projects/engineering-notebook/?badge=latest
+   :alt: Documentation Status
+
 These are some useful ramblings of Linux/Unix/OSX
 
 Arch Linux
@@ -19,7 +23,7 @@ Arch Linux
    
    arch_linux/arch
    arch_linux/Networking
-   arch_linux/setup
+   arch_linux/dropbox
 
 OS X
 ^^^^
@@ -67,6 +71,7 @@ Engineering
    :maxdepth: 2
    
    engineering/statistics
+   engineering/ip_subnetting
 
 
 Indices and tables

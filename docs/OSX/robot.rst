@@ -77,31 +77,30 @@ To stop transmission:
 iBeacon Software
 ----------------
 
-git clone https://github.com/carsonmcdonald/bluez-ibeacon.git
+``git clone https://github.com/carsonmcdonald/bluez-ibeacon.git``
 
-iBeacon-Scanner: git clone
-https://github.com/switchdoclabs/iBeacon-Scanner-.git
+iBeacon-Scanner: ``git clone https://github.com/switchdoclabs/iBeacon-Scanner-.git``
 
-BeaconAirPython: git clone
-https://github.com/switchdoclabs/BeaconAirPython.git
+BeaconAirPython: ``git clone https://github.com/switchdoclabs/BeaconAirPython.git``
 
 I2C
 ===
 
-sudo apt-get install python-smbus sudo apt-get install i2c-tools
+``sudo apt-get install python-smbus sudo apt-get install i2c-tools``
 
-pi@bender ~ $ sudo i2cdetect -y 1 0 1 2 3 4 5 6 7 8 9 a b c d e f 00: --
--- -- -- -- -- -- -- -- -- -- -- -- 10: -- -- -- -- -- -- -- -- 18 -- --
--- -- -- 1e -- 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 30:
--- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 40: -- -- -- -- -- -- --
--- -- -- -- -- -- -- -- -- 50: -- -- -- -- -- -- -- -- -- -- -- -- -- --
--- -- 60: -- -- -- -- -- -- -- -- -- 69 -- -- -- -- -- -- 70: -- -- --
--- -- -- -- --
+::
+
+	pi@bender ~ $ sudo i2cdetect -y 1 0 1 2 3 4 5 6 7 8 9 a b c d e f 00: --
+	-- -- -- -- -- -- -- -- -- -- -- -- 10: -- -- -- -- -- -- -- -- 18 -- --
+	-- -- -- 1e -- 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 30:
+	-- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 40: -- -- -- -- -- -- --
+	-- -- -- -- -- -- -- -- -- 50: -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	-- -- 60: -- -- -- -- -- -- -- -- -- 69 -- -- -- -- -- -- 70: -- -- --
+	-- -- -- -- --
 
 This shows what things are on the I2C bus: 0x18 (accelerometers), 0x1e
 (forget?), and 0x69 (gyros).
 
 Next, get Adafruit's python code:
 
-git clone
-https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code.git
+``git clone https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code.git``

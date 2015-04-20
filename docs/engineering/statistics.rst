@@ -104,6 +104,6 @@ Example: Python
     var(x) = 2.9167
 
 References
-==========
+~~~~~~~~~~
 
 1. http://www.mathsisfun.com/data/index.html
