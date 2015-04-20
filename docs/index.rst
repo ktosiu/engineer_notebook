@@ -12,6 +12,8 @@ Table of Contents
 .. image:: https://readthedocs.org/projects/engineering-notebook/badge/?version=latest
    :target: https://readthedocs.org/projects/engineering-notebook/?badge=latest
    :alt: Documentation Status
+.. image:: https://travis-ci.org/walchko/engineer_notebook.svg?branch=master
+    :target: https://travis-ci.org/walchko/engineer_notebook
 
 These are some useful ramblings of Linux/Unix/OSX
 
