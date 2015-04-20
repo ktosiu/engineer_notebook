@@ -6,6 +6,10 @@
 Table of Contents
 ================================================
 
+.. figure:: ./pics/linux.jpg
+   :width: 200px
+
+These are some useful ramblings of Linux/Unix/OSX
 
 Arch Linux
 ^^^^^^^^^^
@@ -53,6 +57,8 @@ Raspbian
    raspbian/wifi
    raspbian/software
    raspbian/sd_card
+   raspbian/services
+   raspbian/official_raspberrypi_toolchain
 
 Engineering
 ^^^^^^^^^^^
