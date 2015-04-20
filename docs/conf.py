@@ -40,7 +40,7 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 # source_suffix = ['.rst', '.md']
-source_suffix = ['.rst', '.md']
+source_suffix = '.rst'
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -73,7 +73,7 @@ language = None
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-today_fmt = '%B %d, %Y'
+#today_fmt = '%B %d, %Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -193,7 +193,7 @@ html_static_path = ['_static']
 # Sphinx supports the following languages:
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr'
-html_search_language = 'en'
+#html_search_language = 'en'
 
 # A dictionary with options for the search language support, empty by default.
 # Now only 'ja' uses this config value
@@ -255,10 +255,10 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'engineeringnotebook', u'Engineering Notebook Documentation',
-     [author], 1)
-]
+# man_pages = [
+#     (master_doc, 'engineeringnotebook', u'Engineering Notebook Documentation',
+#      [author], 1)
+# ]
 
 # If true, show URL addresses after external links.
 #man_show_urls = False
@@ -269,11 +269,11 @@ man_pages = [
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-texinfo_documents = [
-  (master_doc, 'EngineeringNotebook', u'Engineering Notebook Documentation',
-   author, 'EngineeringNotebook', 'One line description of project.',
-   'Miscellaneous'),
-]
+# texinfo_documents = [
+#   (master_doc, 'EngineeringNotebook', u'Engineering Notebook Documentation',
+#    author, 'EngineeringNotebook', 'One line description of project.',
+#    'Miscellaneous'),
+# ]
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
@@ -291,10 +291,10 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = project
-epub_author = author
-epub_publisher = author
-epub_copyright = copyright
+# epub_title = project
+# epub_author = author
+# epub_publisher = author
+# epub_copyright = copyright
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = project
@@ -334,7 +334,7 @@ epub_copyright = copyright
 #epub_post_files = []
 
 # A list of files that should not be packed into the epub file.
-epub_exclude_files = ['search.html']
+#epub_exclude_files = ['search.html']
 
 # The depth of the table of contents in toc.ncx.
 #epub_tocdepth = 3
