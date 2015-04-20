@@ -13,6 +13,7 @@ Arch Linux
 .. toctree::
    :maxdepth: 2
    
+   arch_linux/arch
    arch_linux/Networking
    arch_linux/setup
 
@@ -22,6 +23,7 @@ OS X
 .. toctree::
    :maxdepth: 2
    
+   OSX/osx
    OSX/Cross-Compiling
    OSX/issues
    OSX/robot
@@ -35,6 +37,7 @@ Raspbian
 .. toctree::
    :maxdepth: 2
    
+   raspbian/raspbian
    raspbian/bluetooth
    raspbian/bt_sync
    raspbian/python

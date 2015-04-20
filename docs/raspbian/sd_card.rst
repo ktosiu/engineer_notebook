@@ -26,7 +26,7 @@ Note this output doesn't really tell you much other than it is ARMv6.
 Copying an image to the SD Card in Mac OS X
 -------------------------------------------
 
-.. figure:: ./pics/sd.jpg
+.. figure:: ../pics/sd.jpg
    :alt: sd logo
 
    sd logo

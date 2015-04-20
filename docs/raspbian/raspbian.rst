@@ -1,10 +1,9 @@
 Raspberry Pi (RPi)
 ==================
 
-.. figure:: ./pics/rpi-org.png
+.. figure:: ../pics/rpi-org.png
    :width: 200px
 
---------------
 
 1 Raspbian
 ==========
@@ -59,8 +58,6 @@ Raspberry Pi (RPi)
 
 3.6 `USB Hard Drive <./usb_hd.md>`__
 ------------------------------------
-
---------------
 
 Where to buy?
 -------------

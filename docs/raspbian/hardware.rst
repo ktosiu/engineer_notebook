@@ -1,7 +1,7 @@
 Hardware
 ========
 
-.. figure:: ./pics/rpi.png
+.. figure:: ../pics/rpi.png
    :width: 200px
 
 Pinouts
@@ -12,7 +12,7 @@ pinouts for the different versions. A great resource is
 `Pinout <http://pi.gadgetoid.com/pinout>`__ to figur out what pin is
 what.
 
-.. figure:: ./pics/pinout.jpeg
+.. figure:: ../pics/pinout.jpeg
    :width: 300px
 
 Lights

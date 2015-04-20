@@ -1,7 +1,7 @@
 Linux Kernel
 ============
 
-.. figure:: ../pics/linux.png
+.. figure:: ../pics/linux.jpg
    :width: 200px
 
 Determine Kernel version and upgrade
