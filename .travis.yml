@@ -1,0 +1,8 @@
+language: python
+sudo: false
+python:
+  - "2.7"
+# command to install dependencies
+install:  cd docs && make -f Makefile html
+# command to run tests
+script: nosetests 
