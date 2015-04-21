@@ -74,6 +74,7 @@ Engineering
    
    engineering/statistics
    engineering/ip_subnetting
+   engineering/series
 
 
 Indices and tables
