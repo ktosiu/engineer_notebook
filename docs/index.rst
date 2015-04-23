@@ -26,6 +26,10 @@ Computers
    :maxdepth: 2
    
    computers/ssh
+   computers/git
+   computers/python
+   computers/ssh2
+   computers/nodejs
 
 
 Arch Linux

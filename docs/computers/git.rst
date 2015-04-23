@@ -7,37 +7,38 @@ Git
 Git Cheat Sheet
 ---------------
 
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Command   | Definition                                                                                                                                                                                                   |
-+===========+==============================================================================================================================================================================================================+
-| Init      | Start a repository ``git init``                                                                                                                                                                              |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Clone     | Create a copy of a repository ``git clone git://somewhere.com/something.git [new_name]``                                                                                                                     |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remote    | Display remote repository ``git remote -v``                                                                                                                                                                  |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Push      | Share changes to an upstream remote (origin) for a branch ``git push [origin] [master]``                                                                                                                     |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Commit    | One step add/push upstream ``git commit -m 'this is my latest update'``                                                                                                                                      |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Add       | Add files to the repository ``git add *.c``. Add is also used to stage files for commit                                                                                                                      |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Fetch     | Pull all changes from a remote repository that have been pushed since you cloned it. Note this doesn't merge any of the changes. ``git fetch [origin]``                                                      |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Pull      | Will automatically ``fetch`` and merge changes from upstream into current branch ``git pull``                                                                                                                |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Tag       | Create an annotated tag ``git tag -a v1.4 -m 'my Version 1.4'``, note for the push command you may have to do: ``git push origin v1.4`` or ``git push origin --tags`` to get tags push on upstream server.   |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Status    | Reports the status of untracked changes in your working repository ``git status``                                                                                                                            |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Diff      | Display changes between working directory and repository ``git diff``                                                                                                                                        |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Rm        | Remove files from repository ``git rm file.c``                                                                                                                                                               |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Mv        | Move files ``git mv from_file to_file``                                                                                                                                                                      |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Log       | View the commit log                                                                                                                                                                                          |
-+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Command   | Example                                                    | Definition                                                                                                                                       |
++===========+============================================================+==================================================================================================================================================+
+| Init      | ``git init``                                               |Start a repository                                                                                                                                |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clone     | ``git clone git://somewhere.com/something.git [new_name]`` |Create a copy of a repository                                                                                                                     |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Remote    | ``git remote -v``                                          |Display remote repository                                                                                                                         |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Push      | ``git push [origin] [master]``                             | Share changes to an upstream remote (origin) for a branch                                                                                        |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Commit    | ``git commit -m 'update'``                                 | One step add/push upstream                                                                                                                       |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Add       | ``git add *.c``                                            | Add files to the repository or to stage files for commit                                                                                         |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Fetch     | ``git fetch [origin]``                                     | Pull all changes from a remote repository that have been pushed since you cloned it. Note this doesn't merge any of the changes.                 |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Pull      | ``git pull``                                               | Will automatically ``fetch`` and merge changes from upstream into current branch                                                                 |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Tag       | ``git tag -a v1.4 -m 'my Version 1.4'``                    | Create an annotated tag, note you may have to: ``git push origin v1.4`` or ``git push origin --tags`` to get tags push on upstream server.       |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Status    | ``git status``                                             | Reports the status of untracked changes in your working repository                                                                               |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Diff      | ``git diff``                                               | Display changes between working directory and repository                                                                                         |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Rm        | ``git rm file.c``                                          | Remove files from repository                                                                                                                     |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Mv        | ``git mv from_file to_file``                               | Move files                                                                                                                                       |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Log       | ``git log``                                                | View the commit log                                                                                                                              |
++-----------+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Git Setup
 ---------
@@ -54,7 +55,7 @@ that info in ``~/.gitconfig``:
 ::
 
     git config --global user.name "walchko"
-    git config --global user.email kevin.walchko@outlook.com
+    git config --global user.email kevin.walchko@hotmail.com
 
 Working with Git
 ----------------
@@ -64,20 +65,17 @@ the default https one:
 
 ::
 
-    git clone git@github.com:walchko/soccer2.git
+    git clone git@github.com:walchko/soccer.git
 
-**Note:** The https one has ``https`` in the address:
-``https://github.com/walchko/soccer2.git``
+**Note:** The https one has ``https`` in the address: ``https://github.com/walchko/soccer2.git``
 
-if you accidentally clone the ``https`` one, you can switch to ``ssh``
-by:
+if you accidentally clone the ``https`` one, you can switch to ``ssh`` by:
 
 ::
 
     git remote set-url origin git@github.com:walchko/soccer2.git
 
-Now create ssh keys following the `github
-directions <https://help.github.com/articles/generating-ssh-keys>`__
+Now create ssh keys following the `github directions <https://help.github.com/articles/generating-ssh-keys>`__
 
 basically:
 
@@ -100,7 +98,7 @@ basically:
 
        pi@bender ~ $ ssh -T git@github.com
        The authenticity of host 'github.com (192.30.252.128)' can't be established.
-       RSA key fingerprint is 16:47:ac:a4:76:28:2d:34:63:1b:56:4d:74:7f:76:48.
+       RSA key fingerprint is 1d:57:ac:a4:76:23:2d:34:63:1b:56:4d:74:7f:76:48.
        Are you sure you want to continue connecting (yes/no)? yes
        Warning: Permanently added 'github.com,192.30.252.128' (RSA) to the list of known hosts.
        Hi walchko! You've successfully authenticated, but GitHub does not provide shell access.
@@ -125,6 +123,7 @@ Read `this <http://rogerdudler.github.io/git-guide/>`__ awesome guide
        git checkout -b my-cool-new-thing
 
 3. Edit code
+
 4. Mark files for change
 
    ::
@@ -136,12 +135,12 @@ Read `this <http://rogerdudler.github.io/git-guide/>`__ awesome guide
    ::
 
        git commit -m "what did you do?"
-       pi@bender ~/soccer2/IMU $ git push origin master
+       pi@bender ~/soccer/IMU $ git push origin master
        Counting objects: 12, done.
        Compressing objects: 100% (8/8), done.
        Writing objects: 100% (8/8), 736 bytes, done.
        Total 8 (delta 6), reused 0 (delta 0)
-       To git@github.com:walchko/soccer2.git
+       To git@github.com:walchko/soccer.git
           8162ade..cd9a476  master -> master
 
 6. Push changes upstream, back to the repository so everyone can use
@@ -151,7 +150,7 @@ Read `this <http://rogerdudler.github.io/git-guide/>`__ awesome guide
 
        git push origin master
 
-   or git push origin
+   or ``git push origin``
 
 To undo what you have committed already and basically create an
 anti-patch for each commit:
