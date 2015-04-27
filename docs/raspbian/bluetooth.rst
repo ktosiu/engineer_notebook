@@ -1,8 +1,8 @@
 Bluetooth
 =========
 
-.. figure:: ../pics/bluetooth.png
-   :width: 200px
+.. image:: ../pics/bluetooth.png
+	:scale: 20
 
 Dongle
 ------

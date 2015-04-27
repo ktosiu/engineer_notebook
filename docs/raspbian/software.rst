@@ -67,7 +67,7 @@ Alot of very useful packages are available from
 ``pip``.
 
 You can use ``pip`` to install and keep python libraries up to date.
-Unfortunately ``pip`` is a horrible package manager, but it could be
+Unfortunately ``pip`` isn't the best package manager, but it could be
 worse ... ``apt-get`` anyone? Some useful, undocumented commands:
 
 +--------------------+--------------------------------------+
@@ -82,10 +82,10 @@ worse ... ``apt-get`` anyone? Some useful, undocumented commands:
 | install -U *pkg*   | upgrade a package                    |
 +--------------------+--------------------------------------+
 
-Why the idiots who run ``pip`` don't make useful commands like
+Why the people who run ``pip`` don't make useful commands like
 ``pip upgrade`` or ``pip outdated`` I don't know. Instead there are
-duplicate (stupid) commands like ``pip freeze`` which is the same as
-``pip list``.
+duplicate commands like ``pip freeze`` which is the same as
+``pip list`` and adds no real value.
 
 Raspbian
 ========

@@ -4,16 +4,6 @@ Python
 .. figure:: ../pics/python.png
    :width: 200px
 
-Sudo
------
-
-You should **never** use sudo to install any python packages with ``pip``. Other people
-created those packages and when you execute the install process using sudo, you just gave
-them root privileges. If they put something bad (keylogger, virus, etc) in the package, 
-then you just compromised your computer. 
-
-A better solution, IMHO, is give yourself read/write privileges to python's package directories,
-then you you don't need to use sudo anymore. 
 
 PyPi
 ----
@@ -52,14 +42,22 @@ Simple module structure:
        -- script1.py
        -- script2.py
 
-Install from source:
+Install from source and still be able to develop
+
+.. sidebar:: Sudo
+
+	You should **never** use sudo to install any python packages with ``pip``. Other people
+	created those packages and when you execute the install process using sudo, you just gave
+	them root privileges. If they put something bad (keylogger, virus, etc) in the package, 
+	then you just compromised your computer. 
+
+	A better solution, IMHO, is give yourself read/write privileges to python's package directories,
+	then you you don't need to use sudo anymore. 
 
 ::
 
     [kevin@Tardis media_server]$ python setup.py develop
     running develop
-    /usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py:2510: PEP440Warning: 'pygame (1.9.1release)' is being parsed as a legacy, non PEP 440, version. You may find odd behavior and sort order. In particular it will be sorted as less than 0.0. It is recommend to migrate to PEP 440 compatible versions.
-    PEP440Warning,
     running egg_info
     writing requirements to media.egg-info/requires.txt
     writing media.egg-info/PKG-INFO
@@ -98,11 +96,17 @@ Install from source:
     Using /usr/local/lib/python2.7/site-packages
     Finished processing dependencies for media==0.1.0
 
+Install from PyPi
+
+::
+
+	pip install module
+
 Uninstall
 
 ::
 
-    sudo pip uninstall module
+	pip uninstall module
 
 Run command line program
 
