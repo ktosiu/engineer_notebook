@@ -30,6 +30,7 @@ Computers
    computers/python
    computers/ssh2
    computers/nodejs
+   computers/curl
 
 
 Arch Linux
