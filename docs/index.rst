@@ -15,7 +15,23 @@ Table of Contents
 .. image:: https://travis-ci.org/walchko/engineer_notebook.svg?branch=master
     :target: https://travis-ci.org/walchko/engineer_notebook
 
-These are some useful ramblings of Linux/Unix/OSX
+These are some useful ramblings of Linux/Unix/OSX and general engineering. This is mainly
+targeted for me, so I can remember how to do all of this stuff without constantly asking
+Google. However, I hope others can find use for it too.
+
+Computers
+^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 2
+   
+   computers/ssh
+   computers/git
+   computers/python
+   computers/ssh2
+   computers/nodejs
+   computers/curl
+
 
 Arch Linux
 ^^^^^^^^^^
