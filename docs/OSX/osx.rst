@@ -23,3 +23,42 @@ You can use the command line to update your OSX systems remotely:
   -r, --recommended  Just the recommended packages
 
 --schedule arg     Setup scheduling downloads, either on or off
+
+OSX Fixes
+---------
+
+`Enable One-Finger Tap & Drag <http://www.guidingtech.com/34353/re-enable-mavericks-features/>`__
+
+Step 1: On your Mac, first open the Preferences panel. There, head to the Accessibility option as shown below.
+
+Preferences
+
+Preferences Accessibility
+
+.. image:: ./pics/Preferences-Accessibility.png
+
+Step 2: On the left panel of the next window, scroll down and select the Mouse & Trackpad option. There, click on the Trackpad Options… button.
+
+Mouse and Trackpad
+
+.. image:: ./pics/Mourse-and-Trackpad.png
+
+This will bring down an options panel.
+
+Step 3: On this panel, you will notice an interesting option at the bottom named Enable dragging. Check it.
+
+Preferences Enable Dragging
+
+.. image:: ./pics/Preferences-Enable-Dragging.png
+
+This option not only allows you to enable dragging on your Mac’s trackpad, but also lets you activate or deactivate drag lock (when enabled, this means that when you drag a window, you will have to perform one more click in order to deactivate the drag function).
+
+And done! Now whenever you use your Mac’s trackpad, just double-tap on any ‘draggable’ area of a window to move it around.
+
+Stop Safari re-opening windows
+------------------------------
+
+::
+
+    defaults write com.apple.Safari ApplePersistenceIgnoreState YES
+    defaults write com.apple.Preview ApplePersistenceIgnoreState YES
