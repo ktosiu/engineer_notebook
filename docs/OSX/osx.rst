@@ -63,6 +63,12 @@ Stop Safari re-opening windows
     defaults write com.apple.Safari ApplePersistenceIgnoreState YES
     defaults write com.apple.Preview ApplePersistenceIgnoreState YES
 
+Stopping App Store Downloads
+-----------------------------
+
+Pausing downloads is easy, but if you start one and want to cancel it hold Option key and click on cancel.
+
+
 
 Useful Software
 ----------------
