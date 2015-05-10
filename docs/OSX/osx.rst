@@ -62,3 +62,19 @@ Stop Safari re-opening windows
 
     defaults write com.apple.Safari ApplePersistenceIgnoreState YES
     defaults write com.apple.Preview ApplePersistenceIgnoreState YES
+
+
+Useful Software
+----------------
+
+My hard drive crashed (29 April 2015) and I had to re-install everything. Oh, a USB drive attached to Airport Extreme as your Time Machine backup doesn't work! When I tried to reinstall from that, it complained about corrupt Time Machine files or some such crap. Connect your drive directly to your computer.
+
+So, here is all the software I had to re-install:
+
+- `Github <https://mac.github.com/>`__
+- BitTorrent `Sync <http://www.bittorrent.com/>`__
+- `Chrome <https://www.google.com/chrome/>`__
+- `Atom <https://atom.io/>`__
+- `Beamer <http://beamer-app.com/>`__
+- `Dropbox <https://www.dropbox.com/>`__
+- `Google Drive <https://www.google.com/drive/>`__
