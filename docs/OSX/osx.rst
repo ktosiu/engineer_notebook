@@ -3,6 +3,7 @@ OSX
 
 .. figure:: ../pics/apple.png
    :width: 200px
+   :align: center
 
 This is my main unix operating system I use daily.
 
