@@ -3,13 +3,12 @@ Linux Kernel
 
 .. figure:: ../pics/linux.jpg
    :width: 200px
+   :align: center
 
 Determine Kernel version and upgrade
 ------------------------------------
 
-You can determine the current linux kernel version by:
-
-::
+You can determine the current linux kernel version by::
 
     [kevin@raspberrypi tmp]$ more /proc/version
     Linux version 3.2.27+ (dc4@dc4-arm-01) (gcc version 4.7.2 20120731 (prerelease)
@@ -26,15 +25,11 @@ or
 In both cases, this is kernel version 3.2.27. Note that the *l* in
 ``armv6l`` refers to little endian.
 
-Get and install `rpi-update <http://github.com/Hexxeh/rpi-update>`__:
-
-::
+Get and install `rpi-update <http://github.com/Hexxeh/rpi-update>`__::
 
     sudo apt-get install rpi-update
 
-Now you can use rpi-update to get the current kernel:
-
-::
+Now you can use rpi-update to get the current kernel::
 
     sudo apt-get upgrade rpi-update
     sudo rpi-update

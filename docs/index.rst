@@ -8,12 +8,13 @@ Table of Contents
 
 .. figure:: ./pics/linux.jpg
    :width: 200px
+   :align: center
 
 .. image:: https://readthedocs.org/projects/engineering-notebook/badge/?version=latest
    :target: https://readthedocs.org/projects/engineering-notebook/?badge=latest
    :alt: Documentation Status
 .. image:: https://travis-ci.org/walchko/engineer_notebook.svg?branch=master
-    :target: https://travis-ci.org/walchko/engineer_notebook
+   :target: https://travis-ci.org/walchko/engineer_notebook
 
 These are some useful ramblings of Linux/Unix/OSX and general engineering. This is mainly
 targeted for me, so I can remember how to do all of this stuff without constantly asking
@@ -27,10 +28,8 @@ Computers
    
    computers/ssh
    computers/git
-   computers/python
-   computers/ssh2
-   computers/nodejs
    computers/curl
+   computers/python
 
 
 Arch Linux
@@ -41,7 +40,6 @@ Arch Linux
    
    arch_linux/arch
    arch_linux/Networking
-   arch_linux/dropbox
 
 OS X
 ^^^^
@@ -50,12 +48,9 @@ OS X
    :maxdepth: 2
    
    OSX/osx
-   OSX/Cross-Compiling
    OSX/issues
-   OSX/robot
-   OSX/scratchbox
-   OSX/ssh
    OSX/virtualbox
+   OSX/official_raspberrypi_toolchain
 
 Raspbian
 ^^^^^^^^
@@ -66,21 +61,15 @@ Raspbian
    raspbian/raspbian
    raspbian/bluetooth
    raspbian/bt_sync
-   raspbian/python
-   raspbian/ssh
    raspbian/kernel
-   raspbian/git
    raspbian/hardware
-   raspbian/i2c
    raspbian/lan_protection
    raspbian/nodejs
-   raspbian/usb_camera
    raspbian/usb_hd
-   raspbian/wifi
+   raspbian/network
    raspbian/software
    raspbian/sd_card
    raspbian/services
-   raspbian/official_raspberrypi_toolchain
 
 Engineering
 ^^^^^^^^^^^

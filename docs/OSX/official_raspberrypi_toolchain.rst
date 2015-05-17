@@ -1,12 +1,10 @@
-USING THE OFFICIAL RASPBERRY PI TOOLCHAIN
+RPI Tool Chain
 -----------------------------------------
 
 The Raspberry Pi Foundation is providing a ready-to-use toolchain on
 their github repository. You can use it to save yourself some time.
 
-To do so, you need to have git installed and to clone the repository :
-
-::
+To do so, you need to have git installed and to clone the repository ::
 
     > sudo apt-get install git-core
     > git clone https://github.com/raspberrypi/tools.git --depth=1
@@ -15,9 +13,7 @@ To do so, you need to have git installed and to clone the repository :
 The "--depth=1" is here to tell git we only want the last revision, and
 not the whole history to be cloned.
 
-Create a new file named test.cpp and copy/paste the following code:
-
-::
+Create a new file named test.cpp and copy/paste the following code::
 
     #include <iostream>
 
@@ -27,9 +23,7 @@ Create a new file named test.cpp and copy/paste the following code:
         return 0;
     }
 
-Then, enter the following commands:
-
-::
+Then, enter the following commands::
 
     > arm-linux-gnueabihf-g++ test.cpp -o test
     > file test

@@ -1,5 +1,8 @@
+Network
+========
+
 WiFi
-====
+----
 
 D-Link wireless N 150 (DWA-121) Pico USB adaptor install.
 

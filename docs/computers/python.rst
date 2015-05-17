@@ -5,29 +5,38 @@ Python
    :width: 200px
 
 
-PyPi
-----
+Python Packages
+---------------
 
-Some good resources are `Python Packaging
-Guide <https://packaging.python.org/en/latest/distributing.html#uploading-your-project-to-pypi>`__
-and `Tom Christie <https://tom-christie.github.io/articles/pypi/>`__ for
-more info.
+Alot of very useful packages are available from `PyPI <https://pypi.python.org/pypi>`__ 
+and can be installed using ``pip``.
 
-The basic setup is:
+You can use ``pip`` to install and keep python libraries up to date.
+Unfortunately ``pip`` isn't the best package manager, but it could be
+worse ... ``apt-get`` anyone? Some useful, undocumented commands:
 
-1. Create an account at pypi.org
-2. Create a package repository at pypi.org using the `web
-   form <https://pypi.python.org/pypi?%3Aaction=submit_form>`__ and
-   uploading the PKG-INFO file
-3. Run a test to ensure no problems ``python setup.py test``
-4. Create the package for upload ``python setup.py sdist``
-5. Upload package to pypi.org ``twine upload dist/*``
++--------------------+--------------------------------------+
+| Pip flag           | Description                          |
++====================+======================================+
+| list               | list installed packages              |
++--------------------+--------------------------------------+
+| list --outdated    | list packages that can be upgraded   |
++--------------------+--------------------------------------+
+| install *pkg*      | install a package                    |
++--------------------+--------------------------------------+
+| install -U *pkg*   | upgrade a package                    |
++--------------------+--------------------------------------+
 
-Twine can be installed using ``pip install twine`` which will secure
-your upload and protect your password. Also the username and password
-are stored in a ``.pypirc`` in your home directory.
+Why the people who run ``pip`` don't make useful commands like
+``pip upgrade`` or ``pip outdated`` I don't know. Instead there are
+duplicate commands like ``pip freeze`` which is the same as
+``pip list`` and adds no real value.
 
-Simple module structure:
+
+Python Modules
+--------------
+
+Simple structure:
 
 ::
 
@@ -42,22 +51,14 @@ Simple module structure:
        -- script1.py
        -- script2.py
 
-Install from source and still be able to develop
-
-.. sidebar:: Sudo
-
-	You should **never** use sudo to install any python packages with ``pip``. Other people
-	created those packages and when you execute the install process using sudo, you just gave
-	them root privileges. If they put something bad (keylogger, virus, etc) in the package, 
-	then you just compromised your computer. 
-
-	A better solution, IMHO, is give yourself read/write privileges to python's package directories,
-	then you you don't need to use sudo anymore. 
+Install from source:
 
 ::
 
-    [kevin@Tardis media_server]$ python setup.py develop
+    [kevin@Tardis media_server]$ sudo python setup.py develop
     running develop
+    /usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py:2510: PEP440Warning: 'pygame (1.9.1release)' is being parsed as a legacy, non PEP 440, version. You may find odd behavior and sort order. In particular it will be sorted as less than 0.0. It is recommend to migrate to PEP 440 compatible versions.
+    PEP440Warning,
     running egg_info
     writing requirements to media.egg-info/requires.txt
     writing media.egg-info/PKG-INFO
@@ -96,17 +97,11 @@ Install from source and still be able to develop
     Using /usr/local/lib/python2.7/site-packages
     Finished processing dependencies for media==0.1.0
 
-Install from PyPi
-
-::
-
-	pip install module
-
 Uninstall
 
 ::
 
-	pip uninstall module
+    sudo pip uninstall module
 
 Run command line program
 
@@ -117,4 +112,22 @@ Run command line program
 where ``module`` is your package name and ``script`` is the python
 script that does something.
 
+PyPi
+----
 
+Some good resources are `Python Packaging
+Guide <https://packaging.python.org/en/latest/distributing.html#uploading-your-project-to-pypi>`__
+and `Tom Christie <https://tom-christie.github.io/articles/pypi/>`__ for
+more info.
+
+1. Create an account at pypi.org
+2. Create a package repository at pypi.org using the `web
+   form <https://pypi.python.org/pypi?%3Aaction=submit_form>`__ and
+   uploading the PKG-INFO file
+3. Run a test to ensure no problems ``python setup.py test``
+4. Create the package for upload ``python setup.py sdist``
+5. Upload package to pypi.org ``twine upload dist/*``
+
+Twine can be installed using ``pip install twine`` which will secure
+your upload and protect your password. Also the username and password
+are stored in a ``.pypirc`` in your home directory.
