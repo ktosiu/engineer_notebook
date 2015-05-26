@@ -29,6 +29,15 @@ Other useful
 `tools <http://hack-tools.blackploit.com/2014/07/pwnpi-pen-test-drop-box-distro-for.html>`__
 for your network.
 
+Tools
+-----
+
+Install::
+
+	sudo apt-get nmap
+    sudo apt-get install tshark libcap-dev snmp-mibs-downloader
+    pip install scapy pcapy
+
 Internet Protocol (IP)
 ======================
 
@@ -37,3 +46,4 @@ Internet Protocol (IP)
 +===============+=============================================================================+
 | 224.0.0.251   | `Multicast DNS <http://en.wikipedia.org/wiki/Multicast_address>`__ (mDNS)   |
 +---------------+-----------------------------------------------------------------------------+
+

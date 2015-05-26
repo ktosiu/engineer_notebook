@@ -2,7 +2,8 @@ Bluetooth
 =========
 
 .. image:: ../pics/bluetooth.png
-	:scale: 20
+	:height: 200px
+	:align: center
 
 Dongle
 ------

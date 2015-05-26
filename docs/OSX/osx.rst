@@ -37,12 +37,14 @@ Preferences
 Preferences Accessibility
 
 .. image:: ./pics/Preferences-Accessibility.png
+   :align: center
 
 Step 2: On the left panel of the next window, scroll down and select the Mouse & Trackpad option. There, click on the Trackpad Options… button.
 
 Mouse and Trackpad
 
-.. image:: ./pics/Mourse-and-Trackpad.png
+.. image:: ./pics/Mouse-and-Trackpad.png
+   :align: center
 
 This will bring down an options panel.
 
@@ -51,6 +53,7 @@ Step 3: On this panel, you will notice an interesting option at the bottom named
 Preferences Enable Dragging
 
 .. image:: ./pics/Preferences-Enable-Dragging.png
+   :align: center
 
 This option not only allows you to enable dragging on your Mac’s trackpad, but also lets you activate or deactivate drag lock (when enabled, this means that when you drag a window, you will have to perform one more click in order to deactivate the drag function).
 
