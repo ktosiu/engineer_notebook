@@ -11,8 +11,8 @@ The version in apt-get is old (at the time of this writing), `<http://node-arm.h
 
 ::
 
-    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-    sudo dpkg -i node_latest_armhf.deb
+	wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+	sudo dpkg -i node_latest_armhf.deb
 	# Check installation
 	node -v
 	npm -v
