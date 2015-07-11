@@ -62,6 +62,8 @@ And done! Now whenever you use your Mac’s trackpad, just double-tap on any ‘
 Stop Safari re-opening windows
 ------------------------------
 
+Hold the shift key down and open Safari
+
 ::
 
     defaults write com.apple.Safari ApplePersistenceIgnoreState YES

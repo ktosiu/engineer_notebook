@@ -21,7 +21,7 @@ targeted for me, so I can remember how to do all of this stuff without constantl
 Google. However, I hope others can find use for it too.
 
 Computers
-^^^^^^^^^
+---------
 
 .. toctree::
    :maxdepth: 2
@@ -39,7 +39,6 @@ Arch Linux
    :maxdepth: 2
    
    arch_linux/arch
-   arch_linux/Networking
 
 OS X
 ^^^^
@@ -80,6 +79,7 @@ Engineering
    engineering/statistics
    engineering/ip_subnetting
    engineering/series
+   engineering/dpkt
 
 
 Indices and tables

@@ -38,12 +38,5 @@ Install::
     sudo apt-get install tshark libcap-dev snmp-mibs-downloader
     pip install scapy pcapy
 
-Internet Protocol (IP)
-======================
 
-+---------------+-----------------------------------------------------------------------------+
-| Addresses     | Description                                                                 |
-+===============+=============================================================================+
-| 224.0.0.251   | `Multicast DNS <http://en.wikipedia.org/wiki/Multicast_address>`__ (mDNS)   |
-+---------------+-----------------------------------------------------------------------------+
 
