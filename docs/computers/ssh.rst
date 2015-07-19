@@ -1,5 +1,5 @@
 SSH 
-========
+====
 
 .. figure:: ../pics/ssh.jpg
    :width: 200px

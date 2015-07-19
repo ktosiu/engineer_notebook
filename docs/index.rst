@@ -20,42 +20,21 @@ These are some useful ramblings of Linux/Unix/OSX and general engineering. This 
 targeted for me, so I can remember how to do all of this stuff without constantly asking
 Google. However, I hope others can find use for it too.
 
-Computers
----------
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    
    computers/ssh
    computers/git
    computers/curl
    computers/python
-
-
-Arch Linux
-^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 2
    
    arch_linux/arch
-
-OS X
-^^^^
-
-.. toctree::
-   :maxdepth: 2
    
    OSX/osx
-   OSX/issues
    OSX/virtualbox
    OSX/official_raspberrypi_toolchain
-
-Raspbian
-^^^^^^^^
-
-.. toctree::
-   :maxdepth: 2
    
    raspbian/raspbian
    raspbian/bluetooth
@@ -69,12 +48,6 @@ Raspbian
    raspbian/software
    raspbian/sd_card
    raspbian/services
-
-Engineering
-^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 2
    
    engineering/statistics
    engineering/ip_subnetting
@@ -85,7 +58,7 @@ Engineering
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+:ref:`genindex`
+:ref:`modindex`
+:ref:`search`
 

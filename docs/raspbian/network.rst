@@ -1,3 +1,6 @@
+Wireless Networking
+====================
+
 WiFi
 ----
 
@@ -16,7 +19,7 @@ plugged in because it takes a lot of power. Otherwise attach to a
 powered USB hub and you should be fine.
 
 WPA2
-~~~~
+----
 
 First create a file with the following information, but substitute in
 the correct ssid and psk (with quotes around them) for your network.
@@ -40,7 +43,7 @@ the correct ssid and psk (with quotes around them) for your network.
 **Note:** The ssid is case sensitive!!
 
 Network Setup
-~~~~~~~~~~~~~
+-------------
 
 Next you will need to change your network interface for a static IP to:
 

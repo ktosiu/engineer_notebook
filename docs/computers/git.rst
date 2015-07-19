@@ -82,7 +82,7 @@ basically:
 
 2. Go to github and add a new ssh key under your profile. Copy/paste in
    the key (use ``more ~/.ssh/id_rsa.pub``) making sure not to add or
-   remove white space. You can use ``pbcopy < ~/.ssh/id_rsa.pub`` to copy it to your 
+   remove white space. You can use ``pbcopy < ~/.ssh/id_rsa.pub`` to copy it to your
    clip board.
 
 3. Then try to ssh in::
