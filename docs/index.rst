@@ -25,34 +25,15 @@ Google. However, I hope others can find use for it too.
    :maxdepth: 2
    :numbered:
    
-   computers/ssh
-   computers/git
-   computers/curl
-   computers/python
+   computers/computers
    
    arch_linux/arch
    
    OSX/osx
-   OSX/virtualbox
-   OSX/official_raspberrypi_toolchain
    
    raspbian/raspbian
-   raspbian/bluetooth
-   raspbian/bt_sync
-   raspbian/kernel
-   raspbian/hardware
-   raspbian/lan_protection
-   raspbian/nodejs
-   raspbian/usb_hd
-   raspbian/network
-   raspbian/software
-   raspbian/sd_card
-   raspbian/services
    
-   engineering/statistics
-   engineering/ip_subnetting
-   engineering/series
-   engineering/dpkt
+   engineering/engineering
 
 
 Indices and tables

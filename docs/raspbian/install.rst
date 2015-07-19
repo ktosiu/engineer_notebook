@@ -1,5 +1,5 @@
 Raspberry Pi (RPi)
-==================
+===================
 
 .. figure:: ../pics/rpi-org.png
    :width: 200px
