@@ -13,3 +13,4 @@ Raspbian
 .. include:: software.rst
 .. include:: sd_card.rst
 .. include:: services.rst
+.. include:: dlna.rst

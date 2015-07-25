@@ -2,8 +2,12 @@ SD Card
 =======
 
 
+.. figure:: ../pics/sd.jpg
+	:width: 200px
+	:align: center
+	
 Backup and Restore
-~~~~~~~~~~~~~~~~~~
+--------------------
 
 Use the ``dd`` command to make a full backup of the image:
 

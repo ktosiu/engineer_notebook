@@ -4,6 +4,10 @@ Networking
 Avahi
 ------
 
+.. figure:: ../pics/avahi.png
+	:width: 200px
+	:align: center
+
 - First run “sudo apt-get install avahi-daemon”.
 - Next, make sure it runs at startup, enter “sudo update-rc.d avahi-daemon defaults”.
 - Create a configuration file containing information about the server. Run “sudo nano /etc/avahi/services/afpd.service”. Enter (or copy/paste) the following:
@@ -43,6 +47,10 @@ $ avahi-browse -arp
 WiFi
 ----
 
+.. figure:: ../pics/wifi.png
+	:width: 200px
+	:align: center
+
 D-Link wireless N 150 (DWA-121) Pico USB adaptor install.
 
 ::
@@ -58,7 +66,7 @@ plugged in because it takes a lot of power. Otherwise attach to a
 powered USB hub and you should be fine.
 
 WPA2
-----
+~~~~~
 
 First create a file with the following information, but substitute in
 the correct ssid and psk (with quotes around them) for your network.

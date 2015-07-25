@@ -1,6 +1,11 @@
 External USB Drive
 ==================
 
+
+.. figure:: ../pics/usb.png
+	:width: 200px
+	:align: center
+
 A goog resource is
 `here <http://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/>`__
 
@@ -183,16 +188,14 @@ netatalk.
     :DEFAULT: options:upriv,usedots
 
     # By default all users have access to their home directories.
-    ~/          "Home Directory"
-    /mnt/usbdrive
+    ~/              "Home Directory"
+    /mnt/usbdrive   "USB Drive"
 
     # End of File
 
 There are also options to enable Time Machine support (see tm).
 
-Then restart ``netatalk``:
-
-::
+Then restart ``netatalk``::
 
     pi@calculon ~ $ sudo /etc/init.d/netatalk stop
     Stopping Netatalk Daemons: afpd cnid_metad papd timelord atalkd.

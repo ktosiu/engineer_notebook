@@ -3,6 +3,7 @@ Hardware
 
 .. figure:: ../pics/rpi.png
    :width: 200px
+	:align: center
 
 Pinouts
 -------

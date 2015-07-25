@@ -2,7 +2,8 @@ Node.js
 =======
 
 .. figure:: ../pics/nodejs.png
-   :width: 200px
+	:width: 200px
+	:align: center
 
 Installing Node.js
 ------------------
