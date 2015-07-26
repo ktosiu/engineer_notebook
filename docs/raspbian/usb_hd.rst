@@ -188,8 +188,8 @@ netatalk.
     :DEFAULT: options:upriv,usedots
 
     # By default all users have access to their home directories.
-    ~/              "Home Directory"
-    /mnt/usbdrive   "USB Drive"
+    ~/              "Calculon"
+    /mnt/usbdrive   "Calculon USB HD"
 
     # End of File
 

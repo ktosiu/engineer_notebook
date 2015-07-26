@@ -115,25 +115,3 @@ Audio Programs
     mplayer -ao alsa:device=bluetooth sound.mp3
     mpg321 -a bluetooth -g 15 sound.mp3
 
-
-I2C
-===
-
-``sudo apt-get install python-smbus sudo apt-get install i2c-tools``
-
-::
-
-	pi@bender ~ $ sudo i2cdetect -y 1 0 1 2 3 4 5 6 7 8 9 a b c d e f 00: --
-	-- -- -- -- -- -- -- -- -- -- -- -- 10: -- -- -- -- -- -- -- -- 18 -- --
-	-- -- -- 1e -- 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 30:
-	-- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 40: -- -- -- -- -- -- --
-	-- -- -- -- -- -- -- -- -- 50: -- -- -- -- -- -- -- -- -- -- -- -- -- --
-	-- -- 60: -- -- -- -- -- -- -- -- -- 69 -- -- -- -- -- -- 70: -- -- --
-	-- -- -- -- --
-
-This shows what things are on the I2C bus: 0x18 (accelerometers), 0x1e
-(forget?), and 0x69 (gyros).
-
-Next, get Adafruit's python code:
-
-``git clone https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code.git``
