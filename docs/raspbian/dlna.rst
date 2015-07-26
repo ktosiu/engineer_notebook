@@ -7,7 +7,8 @@ DLNA
 
 `source <http://www.htpcguides.com/install-readymedia-minidlna-1-1-4-raspberry-pi/>`__
 
-DLNA servers allow you to stream your media library on your HTPC server to any DLNA 
+Digital Living Network Alliance (`DLNA <http://www.dlna.org/>`__ ) servers allow you to 
+stream your media library on your HTPC server to any DLNA 
 enabled client. DLNA enabled clients include Bluray players, XBOX 360, PS3, 
 and some TVs. There are other DLNA servers out there for the Raspberry Pi. I was 
 looking at MediaTomb but it consumes several hundred megabytes of RAM when it is in use. 
