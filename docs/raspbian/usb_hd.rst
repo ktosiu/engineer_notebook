@@ -175,29 +175,3 @@ will reduce the card's life span.
    pi@calculon ~ $ swapon -s Filename Type Size Used Priority /dev/sda2
    partition 4295676 0 -1
 
-Making available to OSX
------------------------
-
-Make the following changes to the config file, adding the drive to
-netatalk.
-
-::
-
-    pi@calculon ~ $ sudo pico /etc/netatalk/AppleVolumes.default 
-    # The line below sets some DEFAULT, starting with Netatalk 2.1.
-    :DEFAULT: options:upriv,usedots
-
-    # By default all users have access to their home directories.
-    ~/              "Calculon"
-    /mnt/usbdrive   "Calculon USB HD"
-
-    # End of File
-
-There are also options to enable Time Machine support (see tm).
-
-Then restart ``netatalk``::
-
-    pi@calculon ~ $ sudo /etc/init.d/netatalk stop
-    Stopping Netatalk Daemons: afpd cnid_metad papd timelord atalkd.
-    pi@calculon ~ $ sudo /etc/init.d/netatalk start
-    Starting Netatalk services (this will take a while):  cnid_metad afpd.

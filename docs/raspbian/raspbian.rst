@@ -11,6 +11,7 @@ Raspbian
 .. include:: beacons.rst
 .. include:: bt_sync.rst
 .. include:: nodejs.rst
+.. include:: opencv.rst
 .. include:: usb_hd.rst
 .. include:: services.rst
 .. include:: dlna.rst

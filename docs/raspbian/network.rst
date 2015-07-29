@@ -1,49 +1,6 @@
 Networking
 ====================
 
-Avahi
-------
-
-.. figure:: ../pics/avahi.png
-	:width: 200px
-	:align: center
-
-- First run “sudo apt-get install avahi-daemon”.
-- Next, make sure it runs at startup, enter “sudo update-rc.d avahi-daemon defaults”.
-- Create a configuration file containing information about the server. Run “sudo nano /etc/avahi/services/afpd.service”. Enter (or copy/paste) the following:
-	::
-
-		<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
-		<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
-		<service-group>
-		   <name replace-wildcards="yes">%h</name>
-		   <service>
-			  <type>_afpovertcp._tcp</type>
-			  <port>548</port>
-		   </service>
-		</service-group> 
-
-	sudo nano /etc/avahi/services/multiple.service 
-	
-	::
-	
-		<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
-		<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
-		<service-group>
-		   <name replace-wildcards="yes">%h</name>
-		   <service>
-			  <type>_afpovertcp._tcp</type>
-			  <port>548</port>
-		   </service>
-		</service-group> 
-
-	Press ctrl and x to exit, then press y to to save changes and return after confirming the location.
-
-- Restart Avahi: “sudo /etc/init.d/avahi-daemon restart”
-- sudo apt-get install netatalk
-- sudo apt-get install avahi-utils
-$ avahi-browse -arp
-
 WiFi
 ----
 
@@ -89,10 +46,10 @@ the correct ssid and psk (with quotes around them) for your network.
 
 **Note:** The ssid is case sensitive!!
 
-Network Setup
--------------
+Static IP Address
+~~~~~~~~~~~~~~~~~~~~
 
-Next you will need to change your network interface for a static IP to:
+If you will need to change your network interface for a static IP to:
 
 ::
 
@@ -123,7 +80,10 @@ the loopback interface, eth0 is the wired interface, with the wlan0
 being the wireless interface. Also, the lines with ``auto`` in them tell
 linux to automatically start those interfaces during the bootup process.
 
-Or if you are fine with DHCP determining all your IP addresses:
+Dynamic IP Address
+~~~~~~~~~~~~~~~~~~~~
+
+If you are fine with DHCP determining all your IP addresses:
 
 ::
 
@@ -181,3 +141,77 @@ and sees a signal strength of 76/100.
               RX bytes:92009000 (87.7 MiB)  TX bytes:1154992 (1.1 MiB)
 
 Notice here a lot of dropped packets on the receive (RX).
+
+
+Making available to OSX
+-----------------------
+
+Avahi
+~~~~~~~
+
+.. figure:: ../pics/avahi.png
+	:width: 200px
+	:align: center
+
+- First run “sudo apt-get install avahi-daemon”.
+- Next, make sure it runs at startup, enter “sudo update-rc.d avahi-daemon defaults”.
+- Create a configuration file containing information about the server. Run “sudo nano /etc/avahi/services/afpd.service”. Enter (or copy/paste) the following:
+	::
+
+		<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+		<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+		<service-group>
+		   <name replace-wildcards="yes">%h</name>
+		   <service>
+			  <type>_afpovertcp._tcp</type>
+			  <port>548</port>
+		   </service>
+		</service-group> 
+
+	sudo nano /etc/avahi/services/multiple.service 
+	
+	::
+	
+		<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+		<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+		<service-group>
+		   <name replace-wildcards="yes">%h</name>
+		   <service>
+			  <type>_afpovertcp._tcp</type>
+			  <port>548</port>
+		   </service>
+		</service-group> 
+
+	Press ctrl and x to exit, then press y to to save changes and return after confirming the location.
+
+- Restart Avahi: “sudo /etc/init.d/avahi-daemon restart”
+- sudo apt-get install netatalk
+- sudo apt-get install avahi-utils
+
+Make the following changes to the config file, adding the drive to
+netatalk.
+
+::
+
+    pi@calculon ~ $ sudo pico /etc/netatalk/AppleVolumes.default 
+    # The line below sets some DEFAULT, starting with Netatalk 2.1.
+    :DEFAULT: options:upriv,usedots
+
+    # By default all users have access to their home directories.
+    ~/              "Calculon"
+    /mnt/usbdrive   "Calculon USB HD"
+
+    # End of File
+
+There are also options to enable Time Machine support (see tm).
+
+Then restart ``netatalk``::
+
+    pi@calculon ~ $ sudo /etc/init.d/netatalk stop
+    Stopping Netatalk Daemons: afpd cnid_metad papd timelord atalkd.
+    pi@calculon ~ $ sudo /etc/init.d/netatalk start
+    Starting Netatalk services (this will take a while):  cnid_metad afpd.
+
+::
+
+	$ avahi-browse -arp
