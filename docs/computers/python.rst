@@ -4,6 +4,56 @@ Python
 .. figure:: ../pics/python.png
    :width: 200px
 
+Install on RPI
+----------------
+
+Out with the Old
+~~~~~~~~~~~~~~~~~
+
+First uninstall all the installed python ``apt-get`` crap, otherwise you get warnings and
+files left behind when you use ``pip``::
+
+	sudo apt-get remove python-pygame python-rpi.gpio python-picamera idle-python2.7 python-minecraftpi python-numpy python-pifacecommon python-pifacedigitalio python-serial  libpython2.7 python-minimal
+
+Fix permissions so we don't need ``sudo`` which is a security issue::
+
+	$ sudo chown -R pi:pi /usr/local
+
+Now all of the python modules using ``pip`` don't need ``sudo`` to get installed.
+
+Get Current Python
+~~~~~~~~~~~~~~~~~~~
+
+`Raspbian <http://sowingseasons.com/blog/building-python-2-7-10-on-raspberry-pi-2.html>`__ 
+is currently lazy on upgrading python to a current version.
+
+Grab Pre-requisites::
+
+	sudo apt-get update
+	sudo apt-get upgrade -y
+	sudo apt-get install build-essential libncursesw5-dev libgdbm-dev libc6-dev 
+	sudo apt-get install zlib1g-dev libsqlite3-dev tk-dev
+	sudo apt-get install libssl-dev openssl
+
+Download and Make::
+
+	$ mkdir tmp
+	$ cd tmp
+	$ wget https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
+	$ tar -zxvf Python-2.7.10.tgz
+	$ cd Python-2.7.10
+	$ ./configure
+	$ make -j 4
+	$ sudo make install
+
+Setup Pip
+~~~~~~~~~~
+
+Get ``pip``::
+
+	$ cd ..
+	$ wget https://bootstrap.pypa.io/get-pip.py
+	$ python get-pip.py
 
 Python Packages
 ---------------
@@ -131,3 +181,13 @@ more info.
 Twine can be installed using ``pip install twine`` which will secure
 your upload and protect your password. Also the username and password
 are stored in a ``.pypirc`` in your home directory.
+
+The structure of a .pypirc file is pretty simple::
+
+	[distutils]
+	index-servers = pypi
+
+	[pypi]
+	repository: https://www.python.org/pypi
+	username: <username>
+	password: <password>

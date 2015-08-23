@@ -153,43 +153,13 @@ Avahi
 	:width: 200px
 	:align: center
 
-- First run “sudo apt-get install avahi-daemon”.
-- Next, make sure it runs at startup, enter “sudo update-rc.d avahi-daemon defaults”.
-- Create a configuration file containing information about the server. Run “sudo nano /etc/avahi/services/afpd.service”. Enter (or copy/paste) the following:
-	::
+::
 
-		<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
-		<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
-		<service-group>
-		   <name replace-wildcards="yes">%h</name>
-		   <service>
-			  <type>_afpovertcp._tcp</type>
-			  <port>548</port>
-		   </service>
-		</service-group> 
+	sudo apt-get install netatalk
+	sudo apt-get install avahi-utils
 
-	sudo nano /etc/avahi/services/multiple.service 
-	
-	::
-	
-		<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
-		<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
-		<service-group>
-		   <name replace-wildcards="yes">%h</name>
-		   <service>
-			  <type>_afpovertcp._tcp</type>
-			  <port>548</port>
-		   </service>
-		</service-group> 
-
-	Press ctrl and x to exit, then press y to to save changes and return after confirming the location.
-
-- Restart Avahi: “sudo /etc/init.d/avahi-daemon restart”
-- sudo apt-get install netatalk
-- sudo apt-get install avahi-utils
-
-Make the following changes to the config file, adding the drive to
-netatalk.
+Make the following changes to the config file, adding an external drive to
+netatalk, if you have one.
 
 ::
 

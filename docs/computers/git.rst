@@ -47,7 +47,7 @@ Let's start off with making git look nice:
 
 ::
 
-    git config color.ui true
+    git config --global color.ui true
 
 Since we will work remotely, we need to tell git who we are. Git stores
 that info in ``~/.gitconfig`` ::

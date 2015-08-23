@@ -22,6 +22,18 @@ disclosure using packet analysis. The encryption used by SSH is intended
 to provide confidentiality and integrity of data over an unsecured
 network, such as the Internet. [1]_
 
+Key Types
+------------
+
+`Source <http://stackoverflow.com/questions/2841094/what-is-the-difference-between-dsa-and-rsa>`__
+
+DSA is faster in signing, but slower in verifying. A DSA key of the same strength as 
+RSA (1024 bits) generates a smaller signature. An RSA 512 bit key has been cracked, but 
+only a 280 DSA key.
+
+Also note that DSA can only be used for **signing/verification**, whereas RSA can be 
+used for **encryption/decrypt** as well.
+
 
 Summary of Useful Commands
 --------------------------
@@ -488,3 +500,51 @@ remote graphical sessions, and configuring firewalls.
 .. [1]
    `Wikipedia entry
    source <http://en.wikipedia.org/wiki/Secure_Shell>`__
+   
+
+Crypto Keys
+-------------
+
+`Source <http://crypto.stackexchange.com/questions/6585/gpg-vs-pgp-vs-openssh-and-management-of-them>`__
+
+::
+
+	What is the main difference of the three? Can I use only one of them for everything 
+	(e.g. GPG for SSH authentication)
+
+- GnuPG is an free and open-source implementation of the OpenPGP standard.
+- Symantec PGP is a proprietary implementation of the OpenPGP standard.
+- The OpenPGP standard defines ways to sign and encrypt information (like mail, other 
+documents and code/software).
+- OpenSSH is about connection securely to remote computers. For authenticating you need 
+some secret, usually this is a passphrase or SSH key.
+
+With OpenPGP, you hold a secret (private key) which also can be used for authenticating 
+yourself. It needs software support for that, and I haven't heard of some code doing this 
+for (Symantec) PGP, `but there is a way doing this with GnuPG <http://budts.be/weblog/2012/08/ssh-authentication-with-your-pgp-key>`__.
+
+::
+
+	If I encrypt my private key with a pass-phrase, is it strong enough so that if someone 
+	steals my laptop or private key, I'm safe?
+
+Your password encrypts your private key. The key is safe as long as your password is 
+safe. If your password is too weak (dictionary-attacks, not long enough, easy to 
+brute-force for other reasons), your key is vulnerable, too.
+
+Think about how valuable your key is for an attacker and choose fitting security measures 
+like storing your key offline (`in the and of this answer <http://security.stackexchange.com/a/31598/19837>`__).
+
+::
+
+	If not, what about encrypting my private key with the scrypt algorithm?
+
+If doing so, security depends on the password you're using for scrypt and scrypt's algorithm. You can achieve the same amount of security with a good OpenPGP password, so there is no need for additionally encrypting your key.
+
+Fingerprints
+--------------
+
+Generate an easier to understand fingerprint (or thumbprint) from a long public key::
+
+	[kevin@Tardis ~]$ ssh-keygen -lf .ssh/test_rsa_key.pub 
+	2048 d0:4a:98:88:95:65:6e:3c:59:7d:10:db:1d:00:10:40  kevin@tardis.local (RSA)
