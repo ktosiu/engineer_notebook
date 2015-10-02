@@ -6,8 +6,7 @@
 Table of Contents
 ================================================
 
-.. figure:: ./pics/linux.jpg
-   :width: 200px
+.. figure:: https://imgs.xkcd.com/comics/workflow.png
    :align: center
 
 .. image:: https://readthedocs.org/projects/engineering-notebook/badge/?version=latest

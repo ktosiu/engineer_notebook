@@ -7,7 +7,29 @@ OSX
 
 This is my main unix operating system I use daily.
 
+OSX 10.11 El Captain, issues with Homebrew
+--------------------------------------------
 
+To regain access to ``/usr/local``
+
+::
+
+	sudo chown $(whoami):admin /usr/local
+
+You also need commandline tools and/or might need to point to them::
+
+	xcode-select --install
+	xcode-select --switch /Applications/Xcode.app
+
+I installed the Beta version of Xcode 7 and for some reason had to switch the links to
+the real version.
+
+Show hidden files
+------------------
+
+::
+
+	defaults write com.apple.finder AppleShowAllFiles False/True
 
 Software Update
 ---------------
