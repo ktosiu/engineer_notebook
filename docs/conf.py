@@ -33,7 +33,8 @@ sys.path.insert(0, os.path.abspath('extentions'))
 # ones.
 extensions = [
 	'sphinx.ext.todo',
-	'sphinx.ext.pngmath',
+# 	'sphinx.ext.pngmath',
+	'sphinx.ext.mathjax',
 	'autoimage',
 ]
 
