@@ -132,6 +132,14 @@ Once you download and install Raspbian you have to configure it for it to be use
     #. ``pip install -U urllib3 certifi pyopenssl``
 #. Find outdated python libraries with ``pip list --outdated`` then update them with ``pip install -U package_name``
 
+Headless
+----------
+
+Good instructions for setting up a headless system are found `here <http://raspberrypi.stackexchange.com/questions/4745/how-to-uninstall-x-server-and-desktop-manager-when-running-as-headless-server>`__ .
+Basically just do this::
+
+	sudo apt-get remove --auto-remove --purge 'libx11-.*'
+	sudo apt-get autoremove --purge
 
 SSH Login
 ---------

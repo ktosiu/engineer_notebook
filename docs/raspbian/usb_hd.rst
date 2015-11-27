@@ -153,6 +153,13 @@ This sets the file system to ``auto`` and ``user`` enables write
 permissions for all users. The 0 is for debugging and 1 is for a file
 system check at boot. You can test this out by:
 
+For a USB thumb drive formated in ``vfat`` you can do::
+
+	/dev/sda1       /mnt/usbdisk    auto    noauto,user,uid=1000,gid=1000  0       2
+
+When the drive is mounted, user ``pi`` has ownership with the ``uid`` and ``gid`` 
+options.
+
 ::
 
     sudo mount -a

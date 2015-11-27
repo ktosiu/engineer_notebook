@@ -13,7 +13,9 @@ Out with the Old
 First uninstall all the installed python ``apt-get`` crap, otherwise you get warnings and
 files left behind when you use ``pip``::
 
-	sudo apt-get remove python-pygame python-rpi.gpio python-picamera idle-python2.7 python-minecraftpi python-numpy python-pifacecommon python-pifacedigitalio python-serial  libpython2.7 python-minimal
+	sudo apt-get remove python-pip python3-pip
+	sudo apt-get autoremove
+	sudo apt-get install python-dev
 
 Fix permissions so we don't need ``sudo`` which is a security issue::
 
@@ -153,14 +155,6 @@ Uninstall
 
     sudo pip uninstall module
 
-Run command line program
-
-::
-
-    python -m module.script
-
-where ``module`` is your package name and ``script`` is the python
-script that does something.
 
 PyPi
 ----
