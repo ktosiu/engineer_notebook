@@ -14,9 +14,16 @@ The version in apt-get is old (at the time of this writing), `<http://node-arm.h
 
 	wget http://node-arm.herokuapp.com/node_latest_armhf.deb
 	sudo dpkg -i node_latest_armhf.deb
-	# Check installation
+	
+	# now sudo messed up some permisions, so we need to fix them
+	sudo chown -R pi:pi /usr/local
+	
+	# Check to see if installation works
 	node -v
 	npm -v
+	
+	# now update to the latest version of node package manager (npm)
+	npm upgrade -g
 
 Packages
 --------
