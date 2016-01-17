@@ -6,6 +6,7 @@ Raspbian
 .. include:: sd_card.rst
 .. include:: kernel.rst
 .. include:: software.rst
+.. include:: repo.rst
 .. include:: network.rst
 .. include:: bluetooth.rst
 .. include:: beacons.rst
@@ -16,3 +17,6 @@ Raspbian
 .. include:: services.rst
 .. include:: dlna.rst
 .. include:: lan_protection.rst
+.. include:: ids.rst
+.. include:: kinect.rst
+.. include:: stitch.rst
